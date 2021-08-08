@@ -80,6 +80,11 @@ function rseweb() {
     rm -rf $RSTMP/RSEWEB_GIT
 }
 
+function rseinstallerremove() {
+    echo "Remove rseinstaller ..."
+    rm -rf $RSBIN/rseinstaller
+}
+
 
 echo "Setting up environment ..."
 echo "Check 1 ..."
@@ -104,7 +109,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("RSE core installation" "RSE webinterface installation" "Quit")
+options=("RSE core installation" "RSE webinterface installation" "RSEINSTALLER removal" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -118,6 +123,11 @@ do
             clear
             banner
             rseweb
+            exit
+    ;;
+        "RSEINSTALLER removal")
+            clear
+            rseinstallerremove
             exit
     ;;
         "Quit")
