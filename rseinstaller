@@ -74,8 +74,8 @@ function rseweb() {
          exit
     fi
     cd $RSTMP/RSEWEB_GIT/
-    chmod +x $RSTMP/RSEWEB_GIT/rsecore
-    $RSTMP/RSEWEB_GIT/rsecore
+    chmod +x $RSTMP/RSEWEB_GIT/rseweb
+    $RSTMP/RSEWEB_GIT/rseweb
     cd $RSPATH
     rm -rf $RSTMP/RSEWEB_GIT
 }
