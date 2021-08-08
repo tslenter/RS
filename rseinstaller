@@ -28,11 +28,11 @@ RSPATH=$(pwd)
 function banner() {
     echo ""
     echo "##################################################"
-    echo "#Remote Syslog Elasticsearch Core                #"
+    echo "#Remote Syslog Master Script                     #"
     echo "#More information: https://www.remotesyslog.com/ #"
     echo "#Remote Syslog installation                      #"
-    echo "#Version: RSECORE 0.1                            #"
-    echo "#Donations: https://github.com/tslenter/RSECORE  #"
+    echo "#Version: RSEINSTALLER 0.1                       #"
+    echo "#Donations: https://github.com/tslenter/RS       #"
     echo "##################################################"
     echo ""
 }
@@ -46,7 +46,7 @@ if ! [ $(id -u) = 0 ]; then
     exit 1
 fi
 
-function rsecore()
+function rsecore() {
     echo "Download installation ..."
     git clone --branch main https://github.com/tslenter/RSECORE $RSTMP/RSECORE_GIT
     echo "Check if download is successfull ..."
@@ -63,7 +63,7 @@ function rsecore()
     rm -rf $RSTMP/RSECORE_GIT
 }
 
-function rseweb()
+function rseweb() {
     echo "Download installation ..."
     git clone --branch main https://github.com/tslenter/RSEWEB $RSTMP/RSEWEB_GIT
     echo "Check if download is successfull ..."
