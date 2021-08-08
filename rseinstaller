@@ -1,0 +1,129 @@
+#!/bin/bash
+
+#License:
+#"Remote Syslog" is a free application what can be used to view syslog messages.
+#Copyright (C) 2020 Tom Slenter
+#
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+#For more information contact the author:
+#Name author: Tom Slenter
+#E-mail: info@remotesyslog.com
+
+RSDEST=/opt/RS
+RSBIN=/usr/bin
+RSPATH=$(pwd)
+
+#Banner
+function banner() {
+    echo ""
+    echo "##################################################"
+    echo "#Remote Syslog Elasticsearch Core                #"
+    echo "#More information: https://www.remotesyslog.com/ #"
+    echo "#Remote Syslog installation                      #"
+    echo "#Version: RSECORE 0.1                            #"
+    echo "#Donations: https://github.com/tslenter/RSECORE  #"
+    echo "##################################################"
+    echo ""
+}
+
+#Check if user is root
+if ! [ $(id -u) = 0 ]; then
+    clear
+    banner
+    echo "This installation must be run as root!"
+    echo ""
+    exit 1
+fi
+
+function rsecore()
+    echo "Download installation ..."
+    git clone --branch main https://github.com/tslenter/RSECORE $RSTMP/RSECORE_GIT
+    echo "Check if download is successfull ..."
+    if [ -d "$RSTMP/RSECORE_GIT" ]; then
+         echo "Continue installation ..."
+    else
+         echo "Clone not successfull ..."
+         exit
+    fi
+    cd $RSTMP/RSECORE_GIT/
+    chmod +x $RSTMP/RSECORE_GIT/rsecore
+    $RSTMP/RSECORE_GIT/rsecore
+    cd $RSPATH
+    rm -rf $RSTMP/RSECORE_GIT
+}
+
+function rseweb()
+    echo "Download installation ..."
+    git clone --branch main https://github.com/tslenter/RSEWEB $RSTMP/RSEWEB_GIT
+    echo "Check if download is successfull ..."
+    if [ -d "$RSTMP/RSEWEB_GIT" ]; then
+         echo "Continue installation ..."
+    else
+         echo "Clone not successfull ..."
+         exit
+    fi
+    cd $RSTMP/RSEWEB_GIT/
+    chmod +x $RSTMP/RSEWEB_GIT/rsecore
+    $RSTMP/RSEWEB_GIT/rsecore
+    cd $RSPATH
+    rm -rf $RSTMP/RSEWEB_GIT
+}
+
+
+echo "Setting up environment ..."
+echo "Check 1 ..."
+if [ -e $RSPATH/rseinstaller ]; then
+    echo "rseinstaller found in local directory, copy to $RSDEST started ..."
+    if [ -d $RSDEST ]; then
+        echo "Directory already exist ..."
+    else
+        mkdir $RSDEST
+        echo "Directory created ..."
+    fi
+    cp -rf $RSPATH/* $RSDEST
+    cp -rf $RSDEST/rseinstaller $RSBIN/rseinstaller
+    chmod +x $RSBIN/rseinstaller
+elif [ -e $RSDEST/rseinstaller ]; then
+    echo "rseinstaller run from $RSDEST, going for $RSDEST environment ..."
+else
+    echo "Did you run the installer from the right directory? ..."
+fi
+
+clear
+banner
+#Menu
+PS3='Please enter your choice: '
+options=("RSE core installation" "RSE webinterface installation" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "RSE core installation")
+            clear
+            banner
+            rsecore
+            exit
+    ;;
+        "RSE webinterface installation")
+            clear
+            banner
+            rseweb
+            exit
+    ;;
+        "Quit")
+            echo "Thank you for using Remote syslog ..."
+            break
+    ;;
+        *) echo "Invalid option $REPLY ..." ;;
+    esac
+done
