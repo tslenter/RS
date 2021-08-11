@@ -1,4 +1,4 @@
-# RS
+# Remote Syslog
 Remote Syslog Master script
 
 Confirmed setups:
