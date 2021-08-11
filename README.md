@@ -2,10 +2,10 @@
 Remote Syslog Master script
 
 Confirmed setups:
-
+```
 Tested for Ubuntu 20.04 LTS virtual machine.
-
 Tested for Ubuntu 21.04 Raspberry Pi 4 (4GB RAM)
+```
 
 Quick installation:
 ```
