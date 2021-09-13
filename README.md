@@ -1,7 +1,7 @@
 # Remote Syslog
 Remote Syslog Master script
 
-Updated RSEWEB respons. Buffer is max: 3500 and refresh is max 3 seconds.
+Updated RSEWEB response. Buffer is max: 3500 and refresh is max 3 seconds.
 
 Confirmed setups:
 ```
