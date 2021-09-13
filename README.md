@@ -1,6 +1,8 @@
 # Remote Syslog
 Remote Syslog Master script
 
+Updated RSEWEB respons. Buffer is max: 3500 and refresh is max 3 seconds.
+
 Confirmed setups:
 ```
 Tested for Ubuntu 20.04 LTS virtual machine.
