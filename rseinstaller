@@ -80,11 +80,27 @@ function rseweb() {
     rm -rf $RSTMP/RSEWEB_GIT
 }
 
+function rs2web() {
+    echo "Download installation ..."
+    git clone --branch main https://github.com/tslenter/RS2WEB $RSTMP/RS2WEB_GIT
+    echo "Check if download is successfull ..."
+    if [ -d "$RSTMP/RS2WEB_GIT" ]; then
+         echo "Continue installation ..."
+    else
+         echo "Clone not successfull ..."
+         exit
+    fi
+    cd $RSTMP/RS2WEB_GIT/
+    chmod +x $RSTMP/RS2WEB_GIT/rsv2web
+    $RSTMP/RS2WEB_GIT/rsv2web
+    cd $RSPATH
+    rm -rf $RSTMP/RS2WEB_GIT
+}
+
 function rseinstallerremove() {
     echo "Remove rseinstaller ..."
     rm -rf $RSBIN/rseinstaller
 }
-
 
 echo "Setting up environment ..."
 echo "Check 1 ..."
@@ -109,7 +125,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("RSE core installation" "RSE webinterface installation" "RSEINSTALLER removal" "Quit")
+options=("RSE core installation" "RSE webinterface installation" "RSv2 webinterface installation" "RSEINSTALLER removal" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -123,6 +139,12 @@ do
             clear
             banner
             rseweb
+            exit
+    ;;
+        "RSv2 webinterface installation")
+            clear
+            banner
+            rs2web
             exit
     ;;
         "RSEINSTALLER removal")
