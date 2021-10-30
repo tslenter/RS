@@ -23,6 +23,7 @@
 RSDEST=/opt/RS
 RSBIN=/usr/bin
 RSPATH=$(pwd)
+RSTMP=/tmp
 
 #Banner
 function banner() {
