@@ -2,7 +2,9 @@
 Remote Syslog Master script
 
 Updated RSEWEB response. Buffer is max: 3500 and refresh is max 3 seconds.
+
 Updated RSECORE Service start time for ElasticSeach to 360 Seconds. Some slow systems need more time to start this service.
+
 Added RSv2 installation option for RSECORE. (Web source is locked, scripts available)
 
 Confirmed setups:
