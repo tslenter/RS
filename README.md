@@ -42,8 +42,8 @@ Default login is using the PAM modules (default installation credentials).
 Usefull commands:
 
 ```
-ubuntu@ubuntu:~$ curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_cluster/settings --data '
-> {
+curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_cluster/settings --data '
+{
   "transient": {
     "indices.lifecycle.poll_interval": "1m"
   }
