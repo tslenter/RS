@@ -1,7 +1,7 @@
 # Remote Syslog
 Remote Syslog Master script
 
-Updated RSEWEB export, loader, liveview controls are added.
+Updated RSEWEB export, loader, live view controls are added.
 
 Updated RSEWEB response. Buffer is max: 3500 and refresh is max 3 seconds.
 
