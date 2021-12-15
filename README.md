@@ -1,6 +1,8 @@
 # Remote Syslog
 Remote Syslog Master script
 
+Updated RSEWEB export, loader, liveview controls are added.
+
 Updated RSEWEB response. Buffer is max: 3500 and refresh is max 3 seconds.
 
 Updated RSECORE Service start time for Elasticsearch to 360 Seconds. Some slow systems need more time to start this service.
