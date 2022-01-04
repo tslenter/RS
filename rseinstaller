@@ -81,21 +81,21 @@ function rseweb() {
     rm -rf $RSTMP/RSEWEB_GIT
 }
 
-function rs2web() {
+function rslweb() {
     echo "Download installation ..."
-    git clone --branch main https://github.com/tslenter/RS2WEB $RSTMP/RS2WEB_GIT
+    git clone --branch main https://github.com/tslenter/RSLWEB $RSTMP/RSLWEB_GIT
     echo "Check if download is successfull ..."
-    if [ -d "$RSTMP/RS2WEB_GIT" ]; then
+    if [ -d "$RSTMP/RSLWEB_GIT" ]; then
          echo "Continue installation ..."
     else
          echo "Clone not successfull ..."
          exit
     fi
-    cd $RSTMP/RS2WEB_GIT/
-    chmod +x $RSTMP/RS2WEB_GIT/rsv2web
-    $RSTMP/RS2WEB_GIT/rsv2web
+    cd $RSTMP/RSLWEB_GIT/
+    chmod +x $RSTMP/RSLWEB_GIT/rslweb
+    $RSTMP/RSLWEB_GIT/rslweb
     cd $RSPATH
-    rm -rf $RSTMP/RS2WEB_GIT
+    rm -rf $RSTMP/RSLWEB_GIT
 }
 
 function rseinstallerremove() {
@@ -126,7 +126,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("RSE core installation" "RSE webinterface installation" "RSv2 webinterface installation" "RSEINSTALLER removal" "Quit")
+options=("RSE core installation" "RSE webinterface installation" "RSL devkit" "RSEINSTALLER removal" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -142,10 +142,10 @@ do
             rseweb
             exit
     ;;
-        "RSv2 webinterface installation")
+        "RSL devkit")
             clear
             banner
-            rs2web
+            rslweb
             exit
     ;;
         "RSEINSTALLER removal")
