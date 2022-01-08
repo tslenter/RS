@@ -162,7 +162,7 @@ do
         "RSX webinterface installation")
             clear
             banner
-            rseweb
+            rsxweb
             exit
     ;;
         "RSL devkit")
