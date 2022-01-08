@@ -81,6 +81,23 @@ function rseweb() {
     rm -rf $RSTMP/RSEWEB_GIT
 }
 
+function rsxweb() {
+    echo "Download installation ..."
+    git clone --branch main https://github.com/tslenter/RSXWEB $RSTMP/RSXWEB_GIT
+    echo "Check if download is successfull ..."
+    if [ -d "$RSTMP/RSXWEB_GIT" ]; then
+         echo "Continue installation ..."
+    else
+         echo "Clone not successfull ..."
+         exit
+    fi
+    cd $RSTMP/RSXWEB_GIT/
+    chmod +x $RSTMP/RSXWEB_GIT/rsxweb
+    $RSTMP/RSXWEB_GIT/rsxweb
+    cd $RSPATH
+    rm -rf $RSTMP/RSXWEB_GIT
+}
+
 function rslweb() {
     echo "Download installation ..."
     git clone --branch main https://github.com/tslenter/RSLWEB $RSTMP/RSLWEB_GIT
@@ -126,7 +143,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("RSE core installation" "RSE webinterface installation" "RSL devkit" "RSEINSTALLER removal" "Quit")
+options=("RSE core installation" "RSE webinterface installation" "RSX webinterface installation" "RSL devkit" "RSEINSTALLER removal" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -137,6 +154,12 @@ do
             exit
     ;;
         "RSE webinterface installation")
+            clear
+            banner
+            rseweb
+            exit
+    ;;
+        "RSX webinterface installation")
             clear
             banner
             rseweb
