@@ -2,8 +2,10 @@
 Remote Syslog Master script
 
 Currently we are migrating from the RSX-RSC repository. Documention could be off. Documention can befound here:
+```
 https://www.remotesyslog.com/
 https://www.github.com/tslenter/RSX-RSC/
+```
 
 Updated RSEWEB export, loader, live view controls are added.
 
