@@ -11,7 +11,7 @@ how to :ref:`installation` the project.
 
 .. note::
 
-   This project is for developement or for user who want to create there own GUI.
+   This product is free and gicen with any warrenty. If you notice any fault, bug or security isseu, please contact us via mail: info@remotesyslog.com.
 
 Contents
 --------
