@@ -1,3 +1,4 @@
+[![Documentation Status](https://readthedocs.org/projects/remote-syslog/badge/?version=latest)](https://remote-syslog.readthedocs.io/en/latest/?badge=latest)
 # Remote Syslog
 Remote Syslog Master script
 
