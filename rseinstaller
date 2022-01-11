@@ -154,6 +154,36 @@ function rseinstallerremove() {
     rm -rf $RSBIN/rseinstaller
 }
 
+#Going to the plugin menu
+function addons(){
+    echo "Check addons requirments ..."
+    echo "The addons require the RSE Core and mostly the RSX interface ..."
+    check_file $RSBIN/rseview
+    echo "Plugins are experemental check configuration before installation ..."
+    while true; do
+    read -p "Do you wish to continue? y/n: " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+    done
+    echo "Download installation ..."
+    git clone --branch main https://github.com/tslenter/RSADDONS $RSTMP/RSADDONS_GIT
+    echo "Check if download is successfull ..."
+    if [ -d "$RSTMP/RSADDONS_GIT" ]; then
+         echo "Continue installation ..."
+    else
+         echo "Clone not successfull ..."
+         exit
+    fi
+    cd $RSTMP/RSADDONS_GIT/
+    chmod +x $RSTMP/RSADDONS_GIT/rsaddon
+    $RSTMP/RSADDONS_GIT/rsaddon
+    cd $RSPATH
+    rm -rf $RSTMP/RSADDONS_GIT
+}
+
 echo "Setting up environment ..."
 echo "Check 1 ..."
 if [ -e $RSPATH/rseinstaller ]; then
@@ -177,7 +207,7 @@ clear
 banner
 #Menu
 PS3='Please enter your choice: '
-options=("RSE core installation" "RSC core installation" "RSC webinterface installation" "RSE webinterface installation" "RSX webinterface installation" "RSL devkit" "RSEINSTALLER removal" "Quit")
+options=("RSE core installation" "RSC core installation" "RSC webinterface installation" "RSE webinterface installation" "RSX webinterface installation" "RSL devkit" "Addons for RSE Core or RSX" "RSEINSTALLER removal" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -215,6 +245,12 @@ do
             clear
             banner
             rslweb
+            exit
+    ;;
+        "Addons for RSE Core or RSX")
+            clear
+            banner
+            addons
             exit
     ;;
         "RSEINSTALLER removal")
