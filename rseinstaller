@@ -47,6 +47,17 @@ if ! [ $(id -u) = 0 ]; then
     exit 1
 fi
 
+#Check if file exist
+function check_file() {
+    file=$1
+    if [ -e "$file" ]; then
+        echo "File: $1 exists, continue installation ..."
+    else
+        echo "File: $1 does not exist, exit ..."
+        exit
+    fi
+}
+
 function rsecore() {
     echo "Download installation ..."
     git clone --branch main https://github.com/tslenter/RSECORE $RSTMP/RSECORE_GIT
