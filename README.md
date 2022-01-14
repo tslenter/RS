@@ -12,14 +12,6 @@ https://www.remotesyslog.com/
 https://www.github.com/tslenter/RSX-RSC/
 ```
 
-Updated RSEWEB export, loader, live view controls are added.
-
-Updated RSEWEB response. Buffer is max: 3500 and refresh is max 3 seconds.
-
-Updated RSECORE Service start time for Elasticsearch to 360 Seconds. Some slow systems need more time to start this service.
-
-Added RSv2 installation option for RSECORE. (Web source is locked, scripts available)
-
 Confirmed setups:
 ```
 Tested for Ubuntu 20.04 LTS virtual machine.
