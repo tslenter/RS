@@ -27,8 +27,9 @@ Tested for Ubuntu 21.04 Raspberry Pi 4 (4GB RAM)
 ```
 
 Quick installation:
+```
 Official documentation: https://remote-syslog.readthedocs.io/
-
+```
 Usefull commands:
 
 ```
