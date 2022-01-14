@@ -1,0 +1,93 @@
+Installation
+=====
+
+.. _installation:
+
+Installation RSE Core
+------------
+
+To use RSE, download the masterscript:
+
+.. code-block:: console
+
+   git clone https://www.github.com/tslenter/RS
+
+Run the installation
+----------------
+
+Run the script masterscript as follows:
+
+.. code-block:: console
+
+   cd RS
+   sudo ./rseinstaller
+
+Select the following options to install the correct core:
+
+.. code-block:: console
+
+   Option 1 => RSE Core installation
+   Option 1 => Core installation
+
+The installsation for RSE core is now completed.
+
+Installation RSC Core
+------------
+
+To use RSE, download the masterscript:
+
+.. code-block:: console
+
+   git clone https://www.github.com/tslenter/RS
+
+Run the installation
+----------------
+
+Run the script masterscript as follows:
+
+.. code-block:: console
+
+   cd RS
+   sudo ./rseinstaller
+
+Select the following options to install the correct core:
+
+.. code-block:: console
+
+   Option 2 => RSC Core installation
+   Option 1 => Core installation
+
+The installsation for RSC core is now completed.
+
+
+
+Deinstallation
+------------
+
+Run the installation
+----------------
+
+Run the script masterscript as follows:
+
+.. code-block:: console
+
+   cd RS
+   sudo ./rseinstaller
+
+Select the following options to deinstall the webinterface:
+
+.. code-block:: console
+
+   Option 3 => RSL webinterface installation
+   Option 2 => RSL removal
+
+
+
+
+
+
+
+RSX Core 
+RSE WEB
+RSX WEB
+RSC WEB
