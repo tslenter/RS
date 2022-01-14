@@ -1,5 +1,5 @@
-3. Usage
-========
+3. Usage CLI
+============
 
 RSE CLI is usable for RSX and RSE.
 RSC CLI is only usable for RSC.
