@@ -2,8 +2,12 @@
 # Remote Syslog
 Remote Syslog Master script
 
-Currently we are migrating from the RSX-RSC repository. Documention could be off. Documention can befound here:
+Currently we are migrating from the RSX-RSC repository. Documention could be off. Documention can be found here:
 ```
+Use this: 
+https://remote-syslog.readthedocs.io/
+
+Otherwise:
 https://www.remotesyslog.com/
 https://www.github.com/tslenter/RSX-RSC/
 ```
@@ -23,30 +27,7 @@ Tested for Ubuntu 21.04 Raspberry Pi 4 (4GB RAM)
 ```
 
 Quick installation:
-```
-git clone https://www.github.com/tslenter/RS
-cd RS
-chmod +x rseinstaller
-sudo ./rseinstaller
-Option 1 => RSE Core installation
-Option 1 => Core installation
-
-sudo ./rseinstaller
-Optional webinsterface:
-Option 2 => RSE webinterface installation
-Option 2 => Install RSE WEB
-```
-
-Use SSH to run the CLI commands. Updated commands:
-```
-rseview
-rseinstaller
-rseuser
-```
-
-Webinterface is running @ port 443 (SSL)
-
-Default login is using the PAM modules (default installation credentials). 
+Official documentation: https://remote-syslog.readthedocs.io/
 
 Usefull commands:
 
