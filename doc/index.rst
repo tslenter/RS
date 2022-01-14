@@ -18,6 +18,7 @@ Contents
 
 .. toctree::
 
+   Requirements
    Installation
    Usage
    FAQ

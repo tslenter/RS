@@ -1,4 +1,4 @@
-2. Usage
+3. Usage
 ========
 
 RSE CLI is usable for RSX and RSE.
@@ -6,7 +6,7 @@ RSC CLI is only usable for RSC.
 
 .. _usage:
 
-2.1 RSE viewer (rseview)
+3.1 RSE viewer (rseview)
 ------------------------
 
 .. code-block:: console
@@ -27,7 +27,7 @@ RSC CLI is only usable for RSC.
    -u,--usage                                      View disk / ram usage
 
    
-2.1.1 Display help
+3.1.1 Display help
 ^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -37,7 +37,7 @@ RSC CLI is only usable for RSC.
 Displays help menu with all available options.
 
 
-2.1.2 Display logging with search string
+3.1.2 Display logging with search string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -47,7 +47,7 @@ Displays help menu with all available options.
 Displays logging with the given search string. Output will be given in the console. Buffer of 90 gives the latest 90 results.
 
 
-2.1.3 Display logging
+3.1.3 Display logging
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -57,7 +57,7 @@ Displays logging with the given search string. Output will be given in the conso
 Displays the latest logging. Output will be given in the console. Buffer of 90 gives the latest 90 results. Buffer is default 50.
 
 
-2.1.4 Display live logging
+3.1.4 Display live logging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -67,7 +67,7 @@ Displays the latest logging. Output will be given in the console. Buffer of 90 g
 Displays live logging. Output will be given in the console. Buffer of 90 gives the latest 90 results. Buffer is default 50.
 
 
-2.1.5 Display live logging with search string
+3.1.5 Display live logging with search string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -77,7 +77,7 @@ Displays live logging. Output will be given in the console. Buffer of 90 gives t
 Displays live logging with the given search string. Output will be given in the console. Buffer of 90 gives the latest 90 results. Buffer is default 50.
 
 
-2.1.6 Generate test message
+3.1.6 Generate test message
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -87,7 +87,7 @@ Displays live logging with the given search string. Output will be given in the 
 Generates a test message. Run "rseview -s test" to check if it was successfull.
 
 
-2.1.7 Clear all logging
+3.1.7 Clear all logging
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -97,7 +97,7 @@ Generates a test message. Run "rseview -s test" to check if it was successfull.
 Clears all logging. Output will be given in the console.
 
 
-2.1.8 Change policy
+3.1.8 Change policy
 ^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -107,7 +107,7 @@ Clears all logging. Output will be given in the console.
 Sets a new lifecycly plocicy for the elasticsearch remote syslog index. Data is given in day and gigabyte. Output will be given in the console.
 
 
-2.1.9 Display policy
+3.1.9 Display policy
 ^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -117,7 +117,7 @@ Sets a new lifecycly plocicy for the elasticsearch remote syslog index. Data is 
 Displays the lifecycle policy. Output will be given in the console.
 
 
-2.1.10 Display index / shard info
+3.1.10 Display index / shard info
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -127,7 +127,7 @@ Displays the lifecycle policy. Output will be given in the console.
 Displays index / shard info. Output will be given in the console.
 
 
-2.1.11 Display cluster / server info
+3.1.11 Display cluster / server info
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -137,7 +137,7 @@ Displays index / shard info. Output will be given in the console.
 Displays cluster / server info. Output will be given in the console.
 
 
-2.1.12 Display usage
+3.1.12 Display usage
 ^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -146,7 +146,7 @@ Displays cluster / server info. Output will be given in the console.
    
 Displays disk and RAM info. Output will be given in the console.
 
-2.2 RSC viewer (rsview)
+3.2 RSC viewer (rsview)
 -----------------------
 
 .. code-block:: console
@@ -161,7 +161,7 @@ Displays disk and RAM info. Output will be given in the console.
    -t,--testmessage                   Send a test message
    -c,--clearlog                      Clear total log archive
 
-2.2.1 Display help
+3.2.1 Display help
 ^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -171,7 +171,7 @@ Displays disk and RAM info. Output will be given in the console.
 Displays help menu with all available options.
 
 
-2.2.2 Display logging with search string
+3.2.2 Display logging with search string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -181,7 +181,7 @@ Displays help menu with all available options.
 Displays logging with the given search string. Output will be given in the console. 
 
 
-2.2.3 Display logging
+3.2.3 Display logging
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -191,7 +191,7 @@ Displays logging with the given search string. Output will be given in the conso
 Displays the latest logging. Output will be given in the console. 
 
 
-2.2.4 Display live logging
+3.2.4 Display live logging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -201,7 +201,7 @@ Displays the latest logging. Output will be given in the console.
 Displays live logging. Output will be given in the console. 
 
 
-2.2.5 Display live logging with search string
+3.2.5 Display live logging with search string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -211,7 +211,7 @@ Displays live logging. Output will be given in the console.
 Displays live logging with the given search string. Output will be given in the console. 
 
 
-2.2.6 Generate test message
+3.2.6 Generate test message
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -221,7 +221,7 @@ Displays live logging with the given search string. Output will be given in the 
 Generates a test message. Run "rsview -s test" to check if it was successfull.
 
 
-2.2.7 Clear all logging
+3.2.7 Clear all logging
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -230,7 +230,7 @@ Generates a test message. Run "rsview -s test" to check if it was successfull.
 
 Clears all logging. Output will be given in the console.
 
-2.3 RSE user management (rseuser)
+3.3 RSE user management (rseuser)
 ---------------------------------
 
 .. code-block:: console
@@ -239,7 +239,7 @@ Clears all logging. Output will be given in the console.
 
    Please use the command as: rseuser <username> <rm or add> <web-only>
 
-2.3.1 Add user
+3.3.1 Add user
 ^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -249,7 +249,7 @@ Clears all logging. Output will be given in the console.
 Creates a user tom for the webinterface only. Drop the web-only option to setup a user for CLI.
 
 
-2.3.2 Remove user
+3.3.2 Remove user
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -258,7 +258,7 @@ Creates a user tom for the webinterface only. Drop the web-only option to setup 
 
 Removes the user tom. 
 
-2.4 RSC user management (rsuser)
+3.4 RSC user management (rsuser)
 --------------------------------
 
 .. code-block:: console
@@ -267,7 +267,7 @@ Removes the user tom.
 
    Please use the command as: rsuser <username> <rm or add> <web-only>
 
-2.3.1 Add user
+3.3.1 Add user
 ^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -277,7 +277,7 @@ Removes the user tom.
 Creates a user tom for the webinterface only. Drop the web-only option to setup a user for CLI.
 
 
-2.3.2 Remove user
+3.3.2 Remove user
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
