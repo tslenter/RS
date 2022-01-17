@@ -267,7 +267,7 @@ Removes the user tom.
 
    Please use the command as: rsuser <username> <rm or add> <web-only>
 
-3.3.1 Add user
+3.4.1 Add user
 ^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -277,7 +277,7 @@ Removes the user tom.
 Creates a user tom for the webinterface only. Drop the web-only option to setup a user for CLI.
 
 
-3.3.2 Remove user
+3.4.2 Remove user
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: console

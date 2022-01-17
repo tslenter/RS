@@ -117,7 +117,7 @@ Required core = RSE core
 
 The installation for RSX webinterface is now completed.
 
-2.5 Installation RSL webinterface (Clean project)
+2.6 Installation RSL webinterface (Clean project)
 -------------------------------------------------
 
 Required core = RSE core
@@ -139,7 +139,7 @@ Remote Syslog RSL clean allows you to install a clean Laravel project for Remote
 
 The installation for RSL webinterface is now completed.
 
-2.6 Installation RSL webinterface (Backup project)
+2.7 Installation RSL webinterface (Backup project)
 --------------------------------------------------
 
 Required core = RSE core
