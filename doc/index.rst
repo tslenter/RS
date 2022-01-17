@@ -21,6 +21,7 @@ Contents
    Requirements
    Installation
    Usage
+   UsageGUI
    Removal
    Upgrade
    FAQ

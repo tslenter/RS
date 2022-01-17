@@ -1,9 +1,9 @@
-5. Upgrade
+6. Upgrade
 ==========
 
 .. _upgrade:
 
-5.1 Upgrade RSE core
+6.1 Upgrade RSE core
 ---------------------
 
 1) To upgrade the RSE core, run:
@@ -21,7 +21,7 @@
 
 The upgrade for RSE core is now completed.
 
-5.2 Upgrade RSC core
+6.2 Upgrade RSC core
 --------------------
 
 1) To upgrade the RSC core, run:
@@ -39,7 +39,7 @@ The upgrade for RSE core is now completed.
 
 The upgrade for RSC core is now completed.
 
-5.3 Upgrade RSE webinterface
+6.3 Upgrade RSE webinterface
 ----------------------------
 
 1) To upgrade the RSE webinterface, run:
@@ -57,7 +57,7 @@ The upgrade for RSC core is now completed.
 
 The upgrade for RSE webinterface is now completed.
 
-5.4 Upgrade RSC webinterface
+6.4 Upgrade RSC webinterface
 ----------------------------
 
 Required core = RSE core
@@ -77,7 +77,7 @@ Required core = RSE core
 
 The upgrade for RSC webinterface is now completed.
 
-5.5 Upgrade RSX webinterface
+6.5 Upgrade RSX webinterface
 ----------------------------
 
 Required core = RSE core
@@ -97,7 +97,7 @@ Required core = RSE core
 
 The upgrade for RSX webinterface is now completed.
 
-5.5 Upgrade RSL webinterface (Any project)
+6.6 Upgrade RSL webinterface (Any project)
 ------------------------------------------
 
 Required core = RSE core

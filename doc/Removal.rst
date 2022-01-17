@@ -1,9 +1,9 @@
-4. Deinstallation
+5. Deinstallation
 =================
 
 .. _removal:
 
-4.1 Deinstallation RSE core
+5.1 Deinstallation RSE core
 ---------------------------
 
 Make sure you removed the RSX/RSE webinterface first.
@@ -23,7 +23,7 @@ Make sure you removed the RSX/RSE webinterface first.
 
 The removal for RSE core is now completed.
 
-4.2 Deinstallation RSC core
+5.2 Deinstallation RSC core
 ---------------------------
 
 Make sure you removed the RSC webinterface first.
@@ -43,7 +43,7 @@ Make sure you removed the RSC webinterface first.
 
 The removal for RSC core is now completed.
 
-4.3 Deinstallation RSE webinterface
+5.3 Deinstallation RSE webinterface
 -----------------------------------
 
 1) To remove the RSE webinterface, run:
@@ -61,7 +61,7 @@ The removal for RSC core is now completed.
 
 The deinstallation for RSE webinterface is now completed.
 
-4.4 Deinstallation RSC webinterface
+5.4 Deinstallation RSC webinterface
 -----------------------------------
 
 Required core = RSE core
@@ -81,7 +81,7 @@ Required core = RSE core
 
 The deinstallation for RSC webinterface is now completed.
 
-4.5 Deinstallation RSX webinterface
+5.5 Deinstallation RSX webinterface
 -----------------------------------
 
 Required core = RSE core
@@ -101,8 +101,8 @@ Required core = RSE core
 
 The deinstallation for RSX webinterface is now completed.
 
-4.5 Installation RSL webinterface (Any project)
------------------------------------------------
+5.6 Deinstallation RSL webinterface (Any project)
+-------------------------------------------------
 
 Required core = RSE core
 
@@ -122,3 +122,20 @@ Remote Syslog RSL clean allows you to remove a clean Laravel project for Remote 
    Option 3 => RSL Removal
 
 The deinstallation for RSL webinterface is now completed.
+
+5.7 Deinstallation rseinstaller
+-------------------------------
+
+1) To remove the rseinstaller command, run:
+
+.. code-block:: console
+
+   rseinstaller
+
+2) Select the following options to remove rseinstaller:
+
+.. code-block:: console
+
+   Option 8 => RSEINSTALLER removal
+
+The deinstallation for rseinstaller is now completed.
