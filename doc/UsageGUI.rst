@@ -146,7 +146,7 @@ Above image shows the dashboard of RSX. It is the elasticsearch interface "Kiban
 4.4 RSC GUI usage
 -----------------
 
-Documentation is build for RSE version 0.1.
+Documentation is build for RSC version 0.2.
 
 4.4.1 RSC Login
 ^^^^^^^^^^^^^^^
