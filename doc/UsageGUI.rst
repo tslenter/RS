@@ -22,12 +22,23 @@
    :align: center
    :alt: image 1
 
+Above image shows the default login. which can be found with the following url: https://<ip-of-server>/. To login use the account what was used during the installation.
+The password requires the following:
+
+.. code-block:: console
+
+   - Minimum of 4 characters
+   - Minimum of 1 capital letter
+   - Minimum of 1 special characters (!, @, #, $, %, ^, &, *, _, =, +, -)
+
 4.2.2 RSE dashboard
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/rse_dashboard.jpg?raw=true
    :width: 400
    :align: center
+
+Above image shows the dashboard and it contains the top 10 stats with a heath indicator of the elasticsearch engine.
    
 4.2.3 RSE text viewer
 ^^^^^^^^^^^^^^^^^^^^^
