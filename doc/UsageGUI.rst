@@ -87,6 +87,7 @@ The buttons:
 4) The "download" button exports the text to a HTML file.
 
 4.2.6 RSE searchbar example searchstrings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default 3 fields are used by RSE. These are:
 
