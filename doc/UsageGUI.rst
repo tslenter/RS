@@ -111,3 +111,34 @@ By default 3 fields are used by RSE. These are:
    * - Use wildcard:
      - com*
      - V
+
+4.3 RSX GUI usage
+-----------------
+
+Documentation is build for RSX version 0.1.
+
+4.3.1 RSX Login
+^^^^^^^^^^^^^^^
+
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/rsx_login.jpg?raw=true
+   :width: 300
+   :align: center
+   :alt: image 1
+
+Above image shows the default login. which can be found with the following url: https://<ip-of-server>/. To login use the account what was used during the installation.
+The password requires the following:
+
+.. code-block:: console
+
+   - Minimum of 4 characters
+   - Minimum of 1 capital letter
+   - Minimum of 1 special characters (!, @, #, $, %, ^, &, *, _, =, +, -)
+   
+4.3.2 RSX dashboard
+^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/rsx_dashboard.jpg?raw=true
+   :width: 400
+   :align: center
+
+Above image shows the dashboard of RSX. It is the elasticsearch interface "Kibana". More information can be found here: https://www.elastic.co/
