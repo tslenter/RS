@@ -143,14 +143,6 @@ The password requires the following:
 
 Above image shows the dashboard of RSX. It is the elasticsearch interface "Kibana". More information can be found here: https://www.elastic.co/
 
-4.1 GUI Requirements
---------------------
-
-.. code-block:: console
-
-   RSE Core is required for RSX and RSE.
-   RSC Core is required for for RSC.
-
 4.4 RSC GUI usage
 -----------------
 
