@@ -115,7 +115,7 @@ Required core = RSE core
    Option 5 => RSX webinterface installation
    Option 2 => Install RSX WEB
 
-The installation for RSE webinterface is now completed.
+The installation for RSX webinterface is now completed.
 
 2.5 Installation RSL webinterface (Clean project)
 -------------------------------------------------
@@ -159,4 +159,4 @@ Remote Syslog RSL backup allows you to restore a Laravel project for Remote Sysl
    Option 6 => RSL devkit
    Option 1 => RSL Backup
 
-The installation for RSE webinterface is now completed.
+The installation for RSL webinterface is now completed.

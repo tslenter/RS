@@ -21,4 +21,6 @@ Contents
    Requirements
    Installation
    Usage
+   Removal
+   Upgrade
    FAQ
