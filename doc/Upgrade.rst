@@ -178,8 +178,8 @@ Upgrade commands:
 
    apt update && sudo apt upgrade
 
-#You probably run in a syslog-ng rdkafka error. This will stop the installation. Therefore we added "apt install -f".
-#This only effects version 3.27.1 and was fixed in 3.27.1-2.
+You probably run in a syslog-ng rdkafka error. This will stop the installation. Therefore we added "apt install -f".
+This only effects version 3.27.1 and was fixed in 3.27.1-2.
 
 .. code-block:: console
 
@@ -250,6 +250,7 @@ After that restart the deamon:
    systemctl restart multipath-tools
 
 Reactivate repo:
+
 .. code-block:: console
 
    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
