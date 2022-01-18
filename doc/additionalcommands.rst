@@ -9,7 +9,7 @@
 8.1.1 Check the cluster health
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Comamnd:
+Command:
 
 .. code-block:: console
 
@@ -36,6 +36,20 @@ Expected output:
       "task_max_waiting_in_queue_millis" : 0,
       "active_shards_percent_as_number" : 100.0
    }
+   
+8.1.2 Speed up lifecycly policy check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to set it to 1 minute:
+
+.. code-block:: console
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_cluster/settings --data '
+   {
+      "transient": {
+        "indices.lifecycle.poll_interval": "1m"
+      }
+   }'
+
    
 8.2 RSC Core commands
 ---------------------
