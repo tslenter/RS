@@ -24,4 +24,6 @@ Contents
    UsageGUI
    Removal
    Upgrade
+   additionconfiguration
+   Security
    FAQ
