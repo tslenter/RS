@@ -143,6 +143,14 @@ The password requires the following:
 
 Above image shows the dashboard of RSX. It is the elasticsearch interface "Kibana". More information can be found here: https://www.elastic.co/
 
+4.3.3 RSX logout
+^^^^^^^^^^^^^^^^
+
+Use the following url to logout:
+.. code-block:: console
+   
+   https://<ip or dns>/logout
+
 4.4 RSC GUI usage
 -----------------
 
