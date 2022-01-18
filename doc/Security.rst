@@ -1,10 +1,10 @@
-8. Security
-===========
+10. Security
+============
 
 .. _security:
 
-8.1 Certificate location and replacement
-----------------------------------------
+10.1 Certificate location and replacement
+-----------------------------------------
 
 All external connections are encrypted with TLS/SSL, this includes the API on port 8080, SSH and HTTP for user login. 
 
@@ -35,8 +35,8 @@ Reload configuration to apply:
 
    service apache2 restart
 
-8.2 RS4LOGJ-CVE-2021-44228
---------------------------
+10.2 RS4LOGJ-CVE-2021-44228
+---------------------------
 
 Apache Log4j vulnerability - CVE-2021-44228 instructions for Remote Syslog:
 
@@ -46,8 +46,8 @@ Effected products: RSL, RSE and RSX.
 
 RSC is not effected.
 
-8.2.1 Upgrade to recommended version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10.2.1 Upgrade to recommended version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check version:
 
@@ -87,8 +87,8 @@ Upgrade instuction to Elasticsearch 7.16.2 or 6.8.22:
 
 !!Please check if the recommended version or higher is going to be installed!!
 
-8.2.2 Mitigation without upgrade
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10.2.2 Mitigation without upgrade
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit:
 

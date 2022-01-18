@@ -25,5 +25,7 @@ Contents
    Removal
    Upgrade
    additionconfiguration
+   additionalcommands
+   Config
    Security
    FAQ

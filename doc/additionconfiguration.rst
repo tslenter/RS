@@ -1,5 +1,5 @@
-7. Addition Configuration
-=========================
+7. Additional configuration
+===========================
 
 .. _additionconfiguration:
 
