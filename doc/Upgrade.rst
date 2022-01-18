@@ -227,10 +227,10 @@ Error 2 || If you run the server on ESXi you get the following error:
 
 .. code-block:: console
 
-   Apr 30 12:47:53 plisk001.prd.corp multipathd[856]: sdb: add missing path
-   Apr 30 12:47:53 plisk001.prd.corp multipathd[856]: sdb: failed to get udev uid: Invalid argument
-   Apr 30 12:47:53 plisk001.prd.corp multipathd[856]: sdb: failed to get sysfs uid: Invalid argument
-   Apr 30 12:47:53 plisk001.prd.corp multipathd[856]: sdb: failed to get sgio uid: No such file or directory
+   Apr 30 12:47:53 plisx001.lan.local multipathd[856]: sdb: add missing path
+   Apr 30 12:47:53 plisx001.lan.local multipathd[856]: sdb: failed to get udev uid: Invalid argument
+   Apr 30 12:47:53 plisx001.lan.local multipathd[856]: sdb: failed to get sysfs uid: Invalid argument
+   Apr 30 12:47:53 plisx001.lan.local multipathd[856]: sdb: failed to get sgio uid: No such file or directory
 
 Edit the following file /etc/multipath.conf to fix this issue:
 
