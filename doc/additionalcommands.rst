@@ -50,6 +50,38 @@ Command to set it to 1 minute:
         "indices.lifecycle.poll_interval": "1m"
       }
    }'
+
+8.1.3 Set lifecycly policy to default 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to reset the policy:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_cluster/settings --data '
+   {
+      "transient": {
+        "indices.lifecycle.poll_interval": null
+      }
+   }'
+
+8.1.4 List indexes 
+^^^^^^^^^^^^^^^^^^
+
+Command to list the indexes:
+
+.. code-block:: console
+
+   curl -XGET 'localhost:9200/_cat/indices'
+
+8.1.5 Check cluster diskspace 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to list the cluster diskspace:
+
+.. code-block:: console
+
+   curl -XGET 'localhost:9200/_cat/allocation?v&pretty'
   
 8.2 RSC Core commands
 ---------------------
@@ -61,7 +93,7 @@ Command to set it to 1 minute:
 
    grep -h "switch1\|switch2\|switch3" /var/log/remote_syslog/* | more
    
-8.2.1 Search for the top 15 messages
+8.2.2 Search for the top 15 messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
