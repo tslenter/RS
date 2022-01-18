@@ -254,6 +254,7 @@ Edit:
    /etc/mail/sendmail.cf
 
 Search for => #"Smart" relay host (may be null)
+
 Change after DS => DSsmtp.lan.corp
 
 Use the following script and save it to /opt/mailrs:
