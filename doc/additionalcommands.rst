@@ -43,14 +43,14 @@ Expected output:
 Command to set it to 1 minute:
 
 .. code-block:: console
+
    curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_cluster/settings --data '
    {
       "transient": {
         "indices.lifecycle.poll_interval": "1m"
       }
    }'
-
-   
+  
 8.2 RSC Core commands
 ---------------------
 
