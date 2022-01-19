@@ -3,8 +3,8 @@
 
 .. _requirements:
 
-1.1 Supported operating systems:
---------------------------------
+1.1 Supported operating systems
+-------------------------------
 
 All version supported.
 
@@ -21,14 +21,14 @@ Only for RSE or RSC.
 
    Raspberry 4
 
-1.3 Bare-metal / Virtual machine:
----------------------------------
+1.3 Bare-metal / Virtual machine
+--------------------------------
 
 All versions supported.
 
 .. code-block:: console
 
-   RSE:
+   RSE/RSL:
    1.5Ghz dual core
    4 GB RAM
    14GB diskspace

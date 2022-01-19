@@ -82,6 +82,134 @@ Command to list the cluster diskspace:
 .. code-block:: console
 
    curl -XGET 'localhost:9200/_cat/allocation?v&pretty'
+   
+8.1.6 Filter on host and time 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adjust size for more results.
+
+Command to filter on host and time:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "HOST_FROM": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-01-13T22:45:39.493+00:00" } } } ] } } , "size": 3 }' | jq
+
+8.1.7 View top 10 results 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to view top 10 messages:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search?pretty
+   
+8.1.8 View the mapping of the fields 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to view mapping of the fields:
+
+.. code-block:: console
+
+   curl -X GET http://127.0.0.1:9200/rse*/_mapping?pretty
+   
+8.1.9 Search between times
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adjust size for more results.
+
+Command to view output between a start and top time:
+
+.. code-block:: console
+   
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "HOST_FROM": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-01-13T22:45:39.493+00:00", "lte": "2022-01-17T22:45:39.493+00:00" } } } ] } } , "size": 3 }' | jq
+
+8.1.10 Search uniq MAC adresses from DHCP index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to view output of uniq MAC adresses from a DHCP index:
+
+Requires logstash to index
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/logstash-rsx-dhcp*/_search?size=10000 -d '{ "query" : { "bool" : { "should": [ { "match": { "Host_Name": "*NUC00*" } }, { "range": { "@timestamp": { "gte": "now-1d/d" } } } ] } } }' | jq | grep MAC_Address | sort | uniq -d
+
+8.1.11 View 2 exact terms 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to view multiple exact terms:
+
+.. code-block:: console
+
+   curl -X POST http://127.0.0.1:9200/rse*/_search -H 'Content-Type:application/json' -d '{
+   "query": {
+     "terms" : {
+       "HOST_FROM" : [ "172.16.30.1", "172.16.30.24" ]
+       }
+     }
+   }' | jq
+   
+8.1.12 View 1 exact term
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to view 1 exact term:
+
+.. code-block:: console
+
+   curl -X POST http://127.0.0.1:9200/rse*/_search -H 'Content-Type:application/json' -d  '{
+   "query": {
+     "term" : {
+      "HOST_FROM" : "172.16.30.1"
+      }
+     }
+   }' | jq
+
+8.1.13 Flush indexes
+^^^^^^^^^^^^^^^^^^^^
+
+Command to start the flush process of an index makes sure that any data that is currently only persisted in the transaction log is also permanently persisted in Lucene.
+
+.. code-block:: console
+
+   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/_flush?wait_if_ongoing   
+
+8.1.14 Delete index
+^^^^^^^^^^^^^^^^^^^
+
+Command to delete a single index:
+
+Index = logstash-rsx-2020.03.28
+
+.. code-block:: console   
+
+   curl -XDELETE http://localhost:9200/logstash-rsx-2020.03.28 | jq
+
+8.1.15 View license
+^^^^^^^^^^^^^^^^^^^
+
+Command to view the license:
+
+.. code-block:: console
+   
+   curl -XGET 'http://localhost:9200/_license?pretty'
+   
+8.1.16 Lite search a value on multiple fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to filter a single value on all fields:
+
+.. code-block:: console
+   
+   curl -XGET 'localhost:9200/_all/_search?q=172.16.30.1&pretty'
+
+8.1.17 Lite search a single value for 1 field
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to filter a single value within 1 field:
+
+.. code-block:: console
+   
+   curl -XGET 'localhost:9200/_all/_search?q=HOST_FROM:172.16.30.1&pretty'
   
 8.2 RSC Core commands
 ---------------------
