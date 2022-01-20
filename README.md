@@ -12,14 +12,8 @@ Use this:
 https://remote-syslog.readthedocs.io/
 ```
 
-And:
 ```
 https://www.remotesyslog.com/
-```
-
-Quick installation:
-```
-Official documentation: https://remote-syslog.readthedocs.io/
 ```
 
 ## 1. Donation and help
