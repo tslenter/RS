@@ -8,7 +8,6 @@ Remote Syslog Master script
 
 Documention can be found here:
 ```
-Use this: 
 https://remote-syslog.readthedocs.io/
 ```
 
