@@ -213,6 +213,9 @@ elif [ -e $RSDEST/rseinstaller ]; then
 else
     echo "Did you run the installer from the right directory? ..."
 fi
+echo "Check 2 ..."
+echo "Remove unclean exit files ..."
+rm -rf /tmp/RS*_GIT
 
 clear
 banner
