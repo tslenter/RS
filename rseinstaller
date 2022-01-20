@@ -215,7 +215,7 @@ else
 fi
 echo "Check 2 ..."
 echo "Remove unclean exit files ..."
-rm -rf /tmp/RS*_GIT
+rm -rf /tmp/RS*_GIT > /dev/null 2>&1
 
 clear
 banner
