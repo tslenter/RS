@@ -6,14 +6,14 @@
 # Remote Syslog
 Remote Syslog Master script
 
-Currently we are migrating from the RSX-RSC repository. Documention could be off. Documention can be found here:
+Documention can be found here:
 ```
 Use this: 
 https://remote-syslog.readthedocs.io/
 
-Otherwise:
+Or:
+
 https://www.remotesyslog.com/
-https://www.github.com/tslenter/RSX-RSC/
 ```
 
 Quick installation:
