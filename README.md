@@ -12,7 +12,7 @@ Use this:
 https://remote-syslog.readthedocs.io/
 ```
 
-Or:
+And:
 ```
 https://www.remotesyslog.com/
 ```
