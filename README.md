@@ -12,6 +12,7 @@ With the Remote Syslog Master script you are able to install and control the fol
 -RSC Web
 -RSE Web
 -RSX Web
+-RSL Web
 ```
 
 Documention and information can be found here:
