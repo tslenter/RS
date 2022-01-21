@@ -6,8 +6,8 @@ More information can be found on https://www.remotesyslog.com/
 
 This is a part of the masterscript: https://www.github.com/tslenter/RS
 
-Check out the :doc:`Usage` section for further information, including
-how to :ref:`installation` the project.
+Check out the :ref:`installation` section for further information about the installation, including
+how to :doc:`Usage` or :doc:`UsageGUI` the project.
 
 .. note::
 
