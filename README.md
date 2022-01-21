@@ -4,9 +4,17 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 # Remote Syslog
-Remote Syslog Master script
+With the Remote Syslog Master script you are able to install and control the following products:
 
-Documention can be found here:
+```
+-RSC Core
+-RSE Core
+-RSC Web
+-RSE Web
+-RSX Web
+```
+
+Documention and information can be found here:
 
 https://remote-syslog.readthedocs.io/
 
