@@ -1,7 +1,7 @@
 Welcome to Remote Syslog documentation!
 ==============================================
 
-Remote Syslog Global documention holds all documentation of the Remote Syslog products. 
+Remote Syslog documention holds all documentation of the Remote Syslog products. 
 More information can be found on https://www.remotesyslog.com/
 
 This is a part of the masterscript: https://www.github.com/tslenter/RS
