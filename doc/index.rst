@@ -1,4 +1,4 @@
-Welcome to Remote Syslog Global documentation!
+Welcome to Remote Syslog documentation!
 ==============================================
 
 Remote Syslog Global documention holds all documentation of the Remote Syslog products. 
