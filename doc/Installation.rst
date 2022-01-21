@@ -1,7 +1,7 @@
+.. _installation:
+
 2. Installation instuctions
 ============================
-
-.. _installation:
 
 2.1 Installation RSE core
 -------------------------
