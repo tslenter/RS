@@ -7,13 +7,10 @@
 Remote Syslog Master script
 
 Documention can be found here:
-```
-https://remote-syslog.readthedocs.io/
-```
 
-```
+https://remote-syslog.readthedocs.io/
+
 https://www.remotesyslog.com/
-```
 
 ## 1. Donation and help
 
