@@ -205,7 +205,7 @@ Check the setting. The image above has the correct values. The container auto-st
 2.8.5 Known error afer apply
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If this error is not shown to you please skip this section.
+If this error is not shown to you, please skip this section.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/docker_port_use_error.png?raw=true
    :width: 400
