@@ -161,8 +161,8 @@ Remote Syslog RSL backup allows you to restore a Laravel project for Remote Sysl
 
 The installation for RSL webinterface is now completed.
 
-2.8 Installation RSE Docker for Synology
-----------------------------------------
+2.8 Installation RSE for docker on Synology
+-------------------------------------------
 
 Login to the Synlogy console. Usually found: https://<nas_ip>:5000
 
