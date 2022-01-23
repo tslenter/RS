@@ -296,3 +296,46 @@ Due the bridge interface the source is displayed as the bridge interface.
 The web interface is available @ https://<nas_ip>:8000. The default login is: Username "test" and the password is "Test123!"
 
 To change the user use the reseview tool within the docker container. (CLI)
+
+2.9 Docker image creation from scratch
+--------------------------------------
+
+Example is given for Remote Syslog RSE.
+
+2.9.1 Create docker image
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download the ubuntu image from the registered images.
+
+And run the following commands:
+
+.. code-block:: console
+
+   apt update && apt upgrade -y
+   apt install lsb-release wget dialog wget git apt-utils gnupg2 -y
+   git clone https://www.github.com/tslenter/RS
+   cd RS
+   ./rseinstaller
+   
+Change the following file:
+
+.. code-block:: console
+
+   vi /etc/elasticsearch/elasticsearch.yml
+   
+   add: 
+   
+   xpack.ml.enabled: false
+   
+2.9.1 Create docker image
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example code to create a docker image:
+
+.. code-block:: console
+
+   docker commit --message "Remote Syslog RSE for Synology ..." --author tom.slenter@remotesyslog.com RSDOCK001
+   docker images
+   docker tag 86bc8a78b689 tslenter/remote_syslog_rse_web
+   docker login --username=<username>
+   docker push <username>/remote_syslog_rse_web:latest
