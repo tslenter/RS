@@ -93,6 +93,7 @@ Increase memory fix:
    nano /etc/elasticsearch/jvm.options
 
 Edit:
+
 .. code-block:: console
 
    --Xms1g
