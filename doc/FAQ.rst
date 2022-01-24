@@ -159,7 +159,7 @@ Cleanup some packages:
 
 .. code-block:: console
 
-sudo apt auto-remove
+   sudo apt auto-remove
 
 Restore RS configuration files:
 
