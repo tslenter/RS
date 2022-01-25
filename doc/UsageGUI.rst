@@ -147,6 +147,7 @@ Above image shows the dashboard of RSX. It is the elasticsearch interface "Kiban
 ^^^^^^^^^^^^^^^^
 
 Use the following url to logout:
+
 .. code-block:: console
    
    https://<ip or dns>/logout
