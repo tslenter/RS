@@ -103,7 +103,7 @@ By default 3 fields are used by RSE. These are:
      - Command:
      - Tested:
    * - MAC address:
-     - \\\'24\\\\:5a\\\\:4c\\\\:1e\\\\:a3\\\\:dc\\\
+     - \\\'24\\\\:5a\\\\:4c\\\\:1e\\\\:a3\\\\:dc\\\'
      - V
    * - Search on a field:
      - MESSAGE: com*
