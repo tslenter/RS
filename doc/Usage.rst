@@ -437,3 +437,86 @@ Expected output (syslog server):
 .. code-block:: console
 
    Jul  5 17:02:21 comp0001.remotesyslog.com rslogger: daemon: alert: rslogger_output: Hello world
+   
+3.6 Remote Syslog Programmer
+----------------------------
+
+Remote Syslog Programmer is a ssh connector written in python to configure device with SSH support.
+This connector can be used on multiple vendors. Tested for Ubiquiti and Cisco devices.
+
+Capabilities: Configure multiple devices with the same configuration. All output will be written to a plain text file.
+
+Created for: To update logging configuration for all network devices of the same type. Can be used for other configurations!
+
+3.6.1 Installation
+^^^^^^^^^^^^^^^^^^
+
+Copy to repo to the local machine:
+
+.. code-block:: console
+
+   git clone https://www.github.com/tslenter/RSPROGRAMMER
+   cd RSPROGRAMMER
+
+3.6.2 Usage
+^^^^^^^^^^^
+
+Run as single cli command with multiple remote commands do:
+
+.. code-block:: console
+   
+   python ssh_connect.py -n 172.16.9.1,172.16.10.1 -u <username> -p <strong_pw> -f commands.txt
+   
+Or for 1 host:
+
+.. code-block:: console
+
+   python ssh_connect.py -n 172.16.9.1 -u <username> -p <strong_pw> -f commands.txt
+   
+Run as single cli command with a single commands do:
+
+.. code-block:: console
+
+   python ssh_connect.py -n 172.16.9.1,172.16.10.1 -u <username>  -p <strong_pw> -f "sh int status"
+
+Or for 1 host:
+
+.. code-block:: console
+
+   python ssh_connect.py -n 172.16.9.1 -u <username>  -p <strong_pw> -f "sh int status"
+
+Run in interactive mode:
+
+.. code-block:: console
+
+   python ssh_connect.py
+
+   =================================
+   Interactive mode is loaded!
+   Enter switch: mysw001,mysw002
+   Enter username: <username>
+   Enter password: <strong_pw>
+   Enter filename or press enter for single command option: <enter file name like command.txt or press enter>
+   If you pressed enter the next question appears:
+   Enter command: <Type command>
+
+The output of the commands will be written to: output.txt.
+
+All options for ssh_connect.py:
+
+.. code-block:: console
+
+   python ssh_connect.py -h
+
+   Script is created by T.Slenter
+   The switches input is as following: hostname or ip,hostname or ip,hostname or ip
+   Running from directory:  F:\ssh_connector\ssh_connector
+   usage: ssh_connect.py [-h] [-n HOST] [-u USERNAME] [-p PASSWORD] [-s SINGLECOMMAND] [-f FILE]
+
+   optional arguments:
+     -h, --help                              Show this help message and exit
+     -n HOST, --host HOST                    Enter a hostname or ip, multiple hostname and ips are supported use seperator=,
+     -u USERNAME, --username USERNAME        Add a username
+     -p PASSWORD, --password PASSWORD        Add a password
+     -s SINGLECOMMAND, --singlecommand       SINGLECOMMAND	Enter a single command
+     -f FILE, --file FILE                    Add file with commands
