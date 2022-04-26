@@ -612,7 +612,7 @@ Go to the following directory:
    
    C:\ProgramData\Elastic\Beats\filebeat
    
-Override the files with the directory with the files within the following URL:
+Override the files within the directory with the files of the following URL:
 
 .. code-block:: console
    
