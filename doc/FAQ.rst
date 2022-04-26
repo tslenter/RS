@@ -1,7 +1,7 @@
-11. FAQ
+12. FAQ
 =======
 
-11.1 My RSX/RSE installation does not recieve any logging
+12.1 My RSX/RSE installation does not recieve any logging
 ---------------------------------------------------------
 
 You probably should check the date. If the date is not correct run in the CLI as root:
@@ -14,7 +14,7 @@ This allows you to configure the timezone.
 
 The next thing to check is within the Kibana console: Management => Advanced Settings => Timezone for date formatting => setup the right timezone.
 
-11.2 Disk full by Geo2
+12.2 Disk full by Geo2
 ----------------------
 
 Message in logging:
@@ -66,7 +66,7 @@ Change rules:
    +log { source(s_src); filter(f_syslog3); filter(geoip_messages_1); filter(geoip_messages_2); destination(d_syslog); };
    +log { source(s_src); filter(f_error); filter(geoip_messages_1); filter(geoip_messages_2); destination(d_error); };
 
-11.3 Kibana not loaded after upgrade
+12.3 Kibana not loaded after upgrade
 ------------------------------------
 
 Restarting the server will solve this problem. Some report that a restart of the Kibana or Elasticsearch will fix the issue.
@@ -76,7 +76,7 @@ Restarting the server will solve this problem. Some report that a restart of the
    service elasticsearch restart
    service kibana restart
 
-11.4 Data too large, data for [<http_request>] (JVM heap size)
+12.4 Data too large, data for [<http_request>] (JVM heap size)
 --------------------------------------------------------------
 
 Error message:
@@ -101,7 +101,7 @@ Edit:
    +-Xms6g
    +-Xmx6g
 
-11.5 Syslog-NG 3.27.1 breaks with new upgrade on Ubuntu 18.04 and 20.04
+12.5 Syslog-NG 3.27.1 breaks with new upgrade on Ubuntu 18.04 and 20.04
 -----------------------------------------------------------------------
 
 Error message:
