@@ -545,13 +545,13 @@ A Example can found here:
 
 .. code-block:: console
    
-   https://www.github.com/tslenter/RSWAFCONF/WINLOGBEAT/
+   https://github.com/tslenter/RSWAFCONF/tree/main/WINLOGBEAT
    
 Replace the field.yml with the file given in the following URL:
 
 .. code-block:: console
    
-   https://www.github.com/tslenter/RSWAFCONF/WINLOGBEAT/
+   https://github.com/tslenter/RSWAFCONF/tree/main/WINLOGBEAT
 
 Reload the WinLogBeat service:
 
@@ -616,7 +616,7 @@ Override the files with the directory with the files within the following URL:
 
 .. code-block:: console
    
-   https://www.github.com/tslenter/RSWAFCONF/FILEBEAT/
+   https://github.com/tslenter/RSWAFCONF/tree/main/FILEBEAT
    
 Edit the filebeat.yml file with the server information:
 
