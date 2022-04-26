@@ -468,4 +468,34 @@ Run:
    cacls C:\inetpub\temp /e /p IIS_IUSRS:f
    cacls C:\MOD-Security_LOG /e /p IIS_IUSRS:f
 
+Reload the IIS service:
 
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/IIS/1.png?raw=true
+   :width: 300
+   :align: center
+   :alt: image 1
+
+Click restart.
+
+Mod security is now installed. By default we block on the OWASP ruleset. If you only want to monitor change within the modsecurity.conf the following code:
+
+From:
+
+.. code-block:: console
+
+   #SecRuleEngine DetectionOnly
+   SecRuleEngine On
+   
+To:
+
+.. code-block:: console
+
+   SecRuleEngine DetectionOnly
+   #SecRuleEngine On
+   
+Reload the service within the IIS console:
+
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/IIS/1.png?raw=true
+   :width: 300
+   :align: center
+   :alt: image 1
