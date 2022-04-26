@@ -15,6 +15,8 @@
 11.2 File download locations
 ----------------------------
 
+.. code-block:: console
+
    Download vcredist_x64.exe: https://www.microsoft.com/en-us/download/details.aspx?id=40784
    Download ModSecurityIIS_2.9.3-64b.msi: https://github.com/SpiderLabs/ModSecurity/releases
    Download filebeat: https://www.elastic.co/downloads/beats/filebeat
@@ -477,7 +479,7 @@ Reload the IIS service:
 
 Click restart.
 
-Mod security is now installed. By default we block on the OWASP ruleset. If you only want to monitor change within the modsecurity.conf the following code:
+Mod security is now installed. By default we block on the OWASP ruleset. If you only want to monitor change within the modsecurity.conf the following code (Optional):
 
 From:
 
@@ -493,9 +495,10 @@ To:
    SecRuleEngine DetectionOnly
    #SecRuleEngine On
    
-Reload the service within the IIS console:
+If the detection mode is changed do a reload of the service within the IIS console:
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/IIS/1.png?raw=true
    :width: 300
    :align: center
    :alt: image 1
+   
