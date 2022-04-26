@@ -28,4 +28,5 @@ Contents
    additionalcommands
    Config
    Security
+   WAF
    FAQ
