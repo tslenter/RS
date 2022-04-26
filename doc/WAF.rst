@@ -502,3 +502,169 @@ If the detection mode is changed do a reload of the service within the IIS conso
    :align: center
    :alt: image 1
    
+11.3.6 or 11.3.7 can be followed as step 5.
+
+11.3.6 WinLogBeat Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Step 5
+
+Configuration of the WinLogBeat package.
+
+Go to the following directory:
+
+.. code-block:: console
+
+   C:\ProgramData\Elastic\Beats\winlogbeat
+
+Edit the winlogbeat.yml: 
+
+.. code-block:: console
+
+   winlogbeat.event_logs:
+     - name: Application
+       ignore_older: 72h
+       provider:
+        - ModSecurity
+
+   setup.template.settings:
+     index.number_of_shards: 1
+
+   output.logstash:
+     # The Logstash hosts
+     hosts: ["cloud.remotesyslog.com:22222"]
+
+   processors:
+     - add_host_metadata: ~
+     - add_cloud_metadata: ~
+   setup.template.fields: ${path.config}/fields.yml
+   setup.template.json.enabled: false
+   setup.template.overwrite: true
+   
+A Example can found here:
+
+.. code-block:: console
+   
+   https://www.github.com/tslenter/RSWAFCONF/WINLOGBEAT/
+   
+Replace the field.yml with the file given in the following URL:
+
+.. code-block:: console
+   
+   https://www.github.com/tslenter/RSWAFCONF/WINLOGBEAT/
+
+Reload the WinLogBeat service:
+
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/Services/1.png?raw=true
+   :width: 300
+   :align: center
+   :alt: image 1
+   
+On the server side (Remote Syslog server which runs logstash add the following configuration:
+
+Create and edit a file:
+
+.. code-block:: console
+
+   nano /etc/logstash/conf.d/99-myprogram.conf
+   
+Add the following configuration:
+
+.. code-block:: console
+
+   input {
+     beats {
+       port => 22222
+     }
+   }
+
+   filter {
+     mutate {
+        rename => { "[winlog][event_data][param1]" => "message" }
+     }
+     mutate { gsub => [ "message", ".*ModSecurity: [^\[]+\[", "" ] }
+     mutate { gsub => [ "message", "][^\[]+$", "" ] }
+     kv { field_split_pattern => "] \[" value_split => " " }
+   #  dissect { mapping => { "message" => "[%{[@metadata][timestamp]}]%{}" } }
+   #  date { match => [ "[@metadata][timestamp]", "EEE MMM dd HH:mm:ss.SSSSSS yyyy" ] }
+   }
+
+
+   output {
+    if [host][hostname] == "SENDING_SERVER" {
+     elasticsearch { hosts => ["localhost:9200"] index => "rse-myprogram"
+       }
+    }
+   stdout { codec => rubydebug }
+
+Change "SENDING_SERVER" in the hostname of your host which sends logging.
+
+11.3.7 FileBeat Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Step 5
+
+Configuration of the Filebeat package.
+
+Go to the following directory:
+
+.. code-block:: console
+   
+   C:\ProgramData\Elastic\Beats\filebeat
+   
+Override the files with the directory with the files within the following URL:
+
+.. code-block:: console
+   
+   https://www.github.com/tslenter/RSWAFCONF/FILEBEAT/
+   
+Edit the filebeat.yml file with the server information:
+
+.. code-block:: console
+   
+   output.logstash:
+      hosts: ["cloud.remotesyslog.com:22222"]
+   #  Enable if CA is enabled
+   #  ssl.enabled: true
+   #  ssl.certificate_authorities: ["${path.home}/cacert.crt"]
+   
+Reload the Filebeat service:
+
+.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/Services/1.png?raw=true
+   :width: 300
+   :align: center
+   :alt: image 1
+   
+On the server side (Remote Syslog server which runs logstash add the following configuration:
+
+Create and edit a file:
+
+.. code-block:: console
+
+   nano /etc/logstash/conf.d/99-myprogram.conf
+   
+Add the following configuration:
+
+.. code-block:: console
+
+   input {
+     beats {
+       port => 22222
+     }
+   }
+
+   #use with filebeat
+   filter {
+      json {
+         source => "message"
+      }
+   }
+
+   output {
+    if [host][hostname] == "SENDING_SERVER" {
+     elasticsearch { hosts => ["localhost:9200"] index => "rse-myprogram"
+       }
+    }
+   stdout { codec => rubydebug }
+
+Change "SENDING_SERVER" in the hostname of your host which sends logging.
