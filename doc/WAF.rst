@@ -30,7 +30,7 @@ Step 1
 11.3.1 Visual C++ Redistributable Packages installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Start he installation of the Visual C++ Redistributable packages.
+Start the installation of the Visual C++ Redistributable packages.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/MVB/1.png?raw=true
    :width: 300
@@ -58,7 +58,7 @@ Click close. The installation is done.
 
 Step 2
 
-Start he installation of the ModSecurity package.
+Start the installation of the ModSecurity package.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/MODSEC/1.png?raw=true
    :width: 300
@@ -123,7 +123,7 @@ Depending of the installation go to section 11.3.3 (WinLogBeat) or 11.3.4 (Fileb
 
 Step 3
 
-Start he installation of the ModSecurity package.
+Start the installation of the ModSecurity package.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/1.png?raw=true
    :width: 300
@@ -151,7 +151,7 @@ Click Finish.
 
 Step 3
 
-Start he installation of the ModSecurity package.
+Start the installation of the ModSecurity package.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/WinLogBeat/1.png?raw=true
    :width: 300
@@ -179,7 +179,7 @@ Click Finish.
 
 Step 3
 
-Start he installation of the ModSecurity package.
+Start the installation of the ModSecurity package.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/1.png?raw=true
    :width: 300
@@ -445,7 +445,7 @@ Edit modsecurity.conf:
 
 Edit crs-setup.conf.example (Optional):
 
-Add to set a paranoia level:
+Add the following to set a paranoia level:
 
 .. code-block:: console
 
@@ -495,7 +495,7 @@ To:
    SecRuleEngine DetectionOnly
    #SecRuleEngine On
    
-If the detection mode is changed do a reload of the service within the IIS console:
+If the detection mode is changed do a reload of the service (reload from the IIS console):
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/IIS/1.png?raw=true
    :width: 300
@@ -560,7 +560,7 @@ Reload the WinLogBeat service:
    :align: center
    :alt: image 1
    
-On the server side (Remote Syslog server which runs logstash add the following configuration:
+On the server side (Logstash with the RSE Core) add the following configuration:
 
 Create and edit a file:
 
@@ -635,9 +635,9 @@ Reload the Filebeat service:
    :align: center
    :alt: image 1
    
-On the server side (Remote Syslog server which runs logstash add the following configuration:
+On the server side (Logstash with the RSE Core) add the following configuration:
 
-Create and edit a file:
+Create and edit the following file:
 
 .. code-block:: console
 
