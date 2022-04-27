@@ -511,6 +511,12 @@ To prevent a big "modsec_audit.log" create a batch file and schedule it 1 or 2 t
    del "c:\MOD-Security_LOG\modsec_audit.log"
    IISReset /START
    
+Example file location (Optional):
+
+.. code-block:: console 
+
+   c:\CLEAR_MOD_SEC_LOGGING.bat
+   
 If you run WinLogBeat you can disable the following configuration within the "modsecurity.conf" (Optional):
 
 .. code-block:: console
