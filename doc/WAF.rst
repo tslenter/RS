@@ -37,7 +37,7 @@ Start the installation of the Visual C++ Redistributable packages.
    :align: center
    :alt: image 1
 
-Click next.
+Accept and click Install.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/MVB/2.png?raw=true
    :width: 300
@@ -501,6 +501,24 @@ If the detection mode is changed do a reload of the service (reload from the IIS
    :width: 300
    :align: center
    :alt: image 1
+
+To prevent a big "modsec_audit.log" create a batch file and schedule it 1 or 2 times a day. Example (Optional):
+
+.. code-block:: console   
+
+   @echo off
+   IISReset /STOP
+   del "c:\MOD-Security_LOG\modsec_audit.log"
+   IISReset /START
+   
+If you run WinLogBeat you can disable the following configuration within the "modsecurity.conf" (Optional):
+
+.. code-block:: console
+
+   #SecAuditLog D:\MOD-Security_LOG\modsec_audit.log
+   #SecAuditLogStorageDir C:\MOD-Security_LOG
+
+A batch file is not needed if the configuration of the log file is disabled using #.
    
 11.3.6 or 11.3.7 can be followed as step 5.
 
