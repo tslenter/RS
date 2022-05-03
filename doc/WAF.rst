@@ -21,6 +21,7 @@
    Download ModSecurityIIS_2.9.3-64b.msi: https://github.com/SpiderLabs/ModSecurity/releases
    Download filebeat: https://www.elastic.co/downloads/beats/filebeat
    Download winlogbeat: https://www.elastic.co/downloads/beats/winlogbeat
+   Download configuration: https://github.com/tslenter/RSWAFCONF
    
 11.3 IIS Module installation
 ----------------------------
@@ -213,7 +214,13 @@ Go to the following directory:
    
    C:\Program Files\ModSecurity IIS
 
-Edit modsecurity.conf:
+Check the config file for the MODSECURITY folder and copy all files to:
+
+.. code-block:: console
+   
+   C:\Program Files\ModSecurity IIS
+
+Edit modsecurity.conf (optional):
 
 .. code-block:: console
 
@@ -443,9 +450,9 @@ Edit modsecurity.conf:
    # version, Anonymous unique id for host.
    SecStatusEngine On
 
-Edit crs-setup.conf.example (Optional):
+Check the crs-setup.conf.example (Optional):
 
-Add the following to set a paranoia level:
+Make sure the following paranoia level is set (Optional:
 
 .. code-block:: console
 
@@ -636,11 +643,17 @@ Go to the following directory:
    
    C:\ProgramData\Elastic\Beats\filebeat
    
-Override the files within the directory with the files of the following URL:
+Override the all files, expect for the module folder with the content of the URL below:
 
 .. code-block:: console
    
    https://github.com/tslenter/RSWAFCONF/tree/main/FILEBEAT
+   
+Copy the module directory to:
+
+.. code-block:: console
+   
+   C:\Program Files\Elastic\Beats\<version>\filebeat
    
 Edit the filebeat.yml file with the server information:
 
@@ -650,7 +663,7 @@ Edit the filebeat.yml file with the server information:
       hosts: ["cloud.remotesyslog.com:22222"]
    #  Enable if CA is enabled
    #  ssl.enabled: true
-   #  ssl.certificate_authorities: ["${path.home}/cacert.crt"]
+   #  ssl.certificate_authorities: ["${path.config}/cacert.crt"]
    
 Reload the Filebeat service:
 
