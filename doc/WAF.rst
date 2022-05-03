@@ -23,7 +23,7 @@
    Download winlogbeat: https://www.elastic.co/downloads/beats/winlogbeat
    Download configuration: https://github.com/tslenter/RSWAFCONF
 
-!Notice!: filebeat version 8 > is not working with the setup.
+!Notice!: filebeat version 8 > is not working with the this guide.
    
 11.3 IIS Module installation
 ----------------------------
