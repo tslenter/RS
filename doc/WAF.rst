@@ -19,9 +19,11 @@
 
    Download vcredist_x64.exe: https://www.microsoft.com/en-us/download/details.aspx?id=40784
    Download ModSecurityIIS_2.9.3-64b.msi: https://github.com/SpiderLabs/ModSecurity/releases
-   Download filebeat: https://www.elastic.co/downloads/beats/filebeat
+   Download filebeat: https://www.elastic.co/downloads/past-releases/filebeat-7-17-3
    Download winlogbeat: https://www.elastic.co/downloads/beats/winlogbeat
    Download configuration: https://github.com/tslenter/RSWAFCONF
+
+Warning filebeat version 8 > is not working with the setup.
    
 11.3 IIS Module installation
 ----------------------------
