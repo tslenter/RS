@@ -208,13 +208,7 @@ Click Finish.
 
 Step 4
 
-Go to the following directory:
-
-.. code-block:: console
-   
-   C:\Program Files\ModSecurity IIS
-
-Check the config file for the MODSECURITY folder and copy all files to:
+Check the RSWAFCONF git for the MODSECURITY folder and copy all files to:
 
 .. code-block:: console
    
