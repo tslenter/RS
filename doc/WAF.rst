@@ -133,7 +133,7 @@ Start the installation of the ModSecurity package.
    :align: center
    :alt: image 1
 
-Accept and click Install.
+Accept and click Next.
 
 .. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/2.png?raw=true
    :width: 300
@@ -639,7 +639,7 @@ Go to the following directory:
    
    C:\ProgramData\Elastic\Beats\filebeat
    
-Override the all files, expect for the module folder with the content of the URL below:
+Download the FileBeat configuration with the URL below and override the files within the FileBeat configuration folder. Expect for the modules folder.
 
 .. code-block:: console
    
