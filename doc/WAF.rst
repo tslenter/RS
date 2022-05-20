@@ -121,34 +121,6 @@ Check within the IIS console if the modules are loaded.
 
 Depending of the installation go to section 11.3.3 (WinLogBeat) or 11.3.4 (Filebeat).
 
-11.3.3 Filebeat installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Step 3
-
-Start the installation of the ModSecurity package.
-
-.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/1.png?raw=true
-   :width: 300
-   :align: center
-   :alt: image 1
-
-Accept and click Next.
-
-.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/2.png?raw=true
-   :width: 300
-   :align: center
-   :alt: image 1
-   
-Wait for the installation to finish.
-
-.. image:: https://github.com/tslenter/RS/blob/main/doc/images/WAF/FileBeat/3.png?raw=true
-   :width: 300
-   :align: center
-   :alt: image 1
-   
-Click Finish.
-
 11.3.3 WinLogBeat installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
