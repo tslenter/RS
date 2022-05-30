@@ -316,7 +316,7 @@ Data node:
     xpack.security.transport.ssl.keystore.path: /etc/elasticsearch/elastic-certificates.p12
     xpack.security.transport.ssl.truststore.path: /etc/elasticsearch/elastic-certificates.p12
     cluster.name: syslog
-    node.name: plisec0002
+    node.name: syslog02
     #node.master: false
     #node.data: true
     node.roles: [ data ]
