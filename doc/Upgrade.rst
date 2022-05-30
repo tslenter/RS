@@ -324,10 +324,10 @@ Data node:
     http.port: 9200
     #transport.tcp.port: 9300
     transport.port: 9300
-    #discovery.zen.ping.unicast.hosts: ["10.136.106.250"]
+    #discovery.zen.ping.unicast.hosts: ["10.10.10.99"]
     #discovery.zen.minimum_master_nodes: 2
     discovery.seed_hosts:
-       - 10.136.106.250
+       - 10.10.10.99
 
 Update Kibana configuration:
 
