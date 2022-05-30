@@ -264,7 +264,105 @@ Reactivate repo:
    apt install syslog-ng-mod-snmp syslog-ng-mod-freetds syslog-ng-mod-json syslog-ng-mod-mysql syslog-ng-mod-pacctformat syslog-ng-mod-pgsql syslog-ng-mod-snmptrapd-parser syslog-ng-mod-sqlite3
    sudo apt autoremove
 
-6.9 Ubuntu upgrade policy
+6.9 Preparations for Elastic 8.x
+--------------------------------
+
+Preparing for Elastic 8.x we have the following additional configuration. As we currently testing and validating the config, we provide the following configuration:
+
+Create selfsinged certificate:
+
+.. code-block:: console
+
+   /usr/share/elasticsearch/bin/elasticsearch-certutil ca
+   /usr/share/elasticsearch/bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12
+
+Generate passwords for all Elastic users:
+
+.. code-block:: console
+
+   /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+
+Edit xpack security option within Elastic. The configuration below is tested for a cluster.
+
+Master node:
+
+.. code-block:: console
+
+   xpack.security.enabled: true
+   xpack.security.authc.api_key.enabled: true
+   xpack.security.transport.ssl.enabled: true
+   xpack.security.transport.ssl.verification_mode: certificate
+   xpack.security.transport.ssl.client_authentication: required
+   xpack.security.transport.ssl.keystore.path: /etc/elasticsearch/elastic-certificates.p12
+   xpack.security.transport.ssl.truststore.path: /etc/elasticsearch/elastic-certificates.p12
+   cluster.name: syslog
+   node.name: syslog01
+   node.roles: [ master, data ]
+   network.host: 0.0.0.0
+   http.port: 9200
+   transport.port: 9300
+   discovery.seed_hosts:
+       - 10.10.10.99
+   
+Data node:
+
+.. code-block:: console
+
+    xpack.security.enabled: true
+    xpack.security.authc.api_key.enabled: true
+    xpack.security.transport.ssl.enabled: true
+    xpack.security.transport.ssl.verification_mode: certificate
+    xpack.security.transport.ssl.client_authentication: required
+    xpack.security.transport.ssl.keystore.path: /etc/elasticsearch/elastic-certificates.p12
+    xpack.security.transport.ssl.truststore.path: /etc/elasticsearch/elastic-certificates.p12
+    cluster.name: syslog
+    node.name: plisec0002
+    #node.master: false
+    #node.data: true
+    node.roles: [ data ]
+    network.host: 0.0.0.0
+    http.port: 9200
+    #transport.tcp.port: 9300
+    transport.port: 9300
+    #discovery.zen.ping.unicast.hosts: ["10.136.106.250"]
+    #discovery.zen.minimum_master_nodes: 2
+    discovery.seed_hosts:
+       - 10.136.106.250
+
+Update Kibana configuration:
+
+.. code-block:: console
+
+   elasticsearch.username: "kibana_system"
+   elasticsearch.password: "MY_PASSWORD"
+   server.rewriteBasePath: true
+   server.basePath: "/kibana"
+
+Update Syslog-NG configuration with username and password in the URL:
+
+.. code-block:: console
+
+    #Update RSE configuration
+    destination d_http {
+     elasticsearch-http(
+      frac_digits(3)
+      index("rsx-routingandswitching")
+      type("production")
+      url("http://my_username:my_password@localhost:9200/_bulk")
+      persist-name("Default RSE log")
+      template("$(format-json --scope rfc5424 --scope dot-nv-pairs --scope nv-pairs --key R_ISODATE @timestamp=${R_ISODATE})"));
+    };
+
+Change the Apache2 reverse configuration for port 80 and 443:
+
+.. code-block:: console
+
+    <Location /kibana>
+        Define CREDENTIALS my_username:my_password
+        RequestHeader set Authorization "expr=Basic %{base64:${CREDENTIALS}}"
+    </Location>
+
+6.10 Ubuntu upgrade policy
 -------------------------
 
 For Ubuntu we only test the latest LTS version. At the time of writing this is 20.04 LTS. The next release will be 22.04 LTS.
