@@ -146,6 +146,31 @@ Displays cluster / server info. Output will be given in the console.
    
 Displays disk and RAM info. Output will be given in the console.
 
+3.1.13 Set authentication for RSEVIEW
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you setup authentication for Elasticsearch then the RSEVIEW gets a update with the username and password as well. You need to change the following files:
+
+File 1: /usr/bin/rseview 
+
+.. code-block:: console
+
+   Change with the username and password:
+   
+   USERNAME=
+   PASSWORD=
+
+File 2: /opt/RSEVIEW/rs_init.php
+
+.. code-block:: console
+
+   Change with the username and password:
+
+   'user' => '',
+   'pass' => ''
+
+The default login is nothing. When changed the login name is probably "elastic"
+
 3.2 RSC viewer (rsview)
 -----------------------
 
