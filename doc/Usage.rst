@@ -169,7 +169,7 @@ File 2: /opt/RSEVIEW/rs_init.php
    'user' => '',
    'pass' => ''
 
-The default login is nothing. When changed the login name is probably "elastic"
+The default login is nothing. When changed, the login username is probably "elastic"
 
 3.2 RSC viewer (rsview)
 -----------------------
