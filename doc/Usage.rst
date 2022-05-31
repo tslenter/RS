@@ -146,8 +146,8 @@ Displays cluster / server info. Output will be given in the console.
    
 Displays disk and RAM info. Output will be given in the console.
 
-3.1.13 Set authentication for RSEVIEW
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.1.13 Authentication for RSEVIEW
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you setup authentication for Elasticsearch then the RSEVIEW gets a update with the username and password as well. You need to change the following files:
 
