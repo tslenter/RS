@@ -231,8 +231,6 @@ Exclude result based on a single word:
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not": { "match": { "MESSAGE": "172.16.30.1" } } } } }' | jq
-   
-
 
 8.1.19 Advanced searches
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -275,7 +273,35 @@ Search results of the last hour with a value:
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "now-1h" } } } ] } } }' | jq
    
+8.1.20 validate query's
+^^^^^^^^^^^^^^^^^^^^^^^
 
+Check if query's are valid:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_validate/query -d '{ "query" : { "match" : { "MESSAGE": "172.16.30.1" } } }' | jq
+
+Check if query is valid with explaination:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_validate/query?explain -d '{ "query" : { "match" : { "MESSAGE": "172.16.30.1" } } } }' | jq
+
+8.1.21 sort results
+^^^^^^^^^^^^^^^^^^^
+
+Filter value when using sort:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "match" : { "MESSAGE": "172.16.30.1" } }, "sort": { "_score": { "order": "desc" } } }' | jq
+
+Filter value when using 2 sorts:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' 'http://localhost:9200/rse*/_search?sort=R_ISODATE:desc&sort=_score&q=172.16.30.1' | jq
   
 8.2 RSC Core commands
 ---------------------
