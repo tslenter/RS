@@ -242,3 +242,14 @@ Command to exclude a value and filter down multiple hosts within a specific time
 .. code-block:: console
 
    egrep -o "%.+?: "/var/log/remote_syslog/remote_syslog.log | sort | uniq -c | sort -nr | head -n 15
+
+8.3 Unsupported commands
+---------------------
+
+8.3.1 Disable NTP and change date
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   timedatectl set-time '2022-01-20'
+   timedatectl set-ntp 0
