@@ -171,7 +171,21 @@ Command to start the flush process of an index makes sure that any data that is 
 
 .. code-block:: console
 
-   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/_flush?wait_if_ongoing   
+   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/_flush?wait_if_ongoing | jq
+
+or:
+
+.. code-block:: console
+
+   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/_flush?wait_if_ongoing | jq
+
+Flush a set or a single index:
+
+Note: use wildcard do group the indexes.
+
+.. code-block:: console
+
+   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/rse*/_flush | jq
 
 8.1.14 Delete index
 ^^^^^^^^^^^^^^^^^^^
