@@ -382,13 +382,13 @@ Restore default refresh interval for index:
 
 .. code-block:: console
 
-   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_ilm/policy/netflow-policy -d ' { "policy": { "phases": { "hot": { "min_age": "0ms", "actions": { "rollover": { "max_primary_shard_size": "50gb", "max_age": "14d" } } }, "delete": { "min_age": "14d", "actions": { "delete": { "delete_searchable_snapshot": true } } } } } }'
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_ilm/policy/netflow-policy -d ' { "policy": { "phases": { "hot": { "min_age": "0ms", "actions": { "rollover": { "max_primary_shard_size": "50gb", "max_age": "14d" } } }, "delete": { "min_age": "14d", "actions": { "delete": { "delete_searchable_snapshot": true } } } } } }' | jq
  
  and:
  
 .. code-block:: console
  
-   curl -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }'
+   url -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }' | jq
 
 8.2 RSC Core commands
 ---------------------
