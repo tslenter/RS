@@ -316,7 +316,55 @@ Filter value when using 2 sorts:
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' 'http://localhost:9200/rse*/_search?sort=R_ISODATE:desc&sort=_score&q=172.16.30.1' | jq
-  
+
+8.1.22 Indexes and aliases
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a index:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy | jq
+
+Create a alias on a index:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_alias/rse-dummy2 | jq
+
+View alias:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_alias/* | jq
+
+8.1.23 Refresh indexes
+^^^^^^^^^^^^^^^^^^^^^^
+
+Refresh all indexes:
+
+.. code-block:: console
+
+   curl -XPOST --header 'Content-Type: application/json' http://localhost:9200/_refresh | jq
+
+Change refresh of index to 30 seconds:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_settings -d '{ "settings": { "refresh_interval": "30s" }}' | jq
+
+Disable refresh interval for index:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_settings -d '{ "settings": { "refresh_interval": "-1" }}' | jq
+
+Restore default refresh interval for index:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_settings -d '{ "settings": { "refresh_interval": "1s" }}' | jq
+
 8.2 RSC Core commands
 ---------------------
 
