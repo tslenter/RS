@@ -273,7 +273,7 @@ Search results of the last hour with a value:
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "now-1h" } } } ] } } }' | jq
    
-8.1.20 validate query's
+8.1.20 Validate query's
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Check if query's are valid:
@@ -288,7 +288,7 @@ Check if query is valid with explaination:
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_validate/query?explain -d '{ "query" : { "match" : { "MESSAGE": "172.16.30.1" } } } }' | jq
 
-8.1.21 sort results
+8.1.21 Sort results
 ^^^^^^^^^^^^^^^^^^^
 
 Filter value when using sort:
