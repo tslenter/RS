@@ -388,7 +388,7 @@ and:
  
 .. code-block:: console
  
-   url -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }' | jq
+   curl -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }' | jq
 
 8.2 RSC Core commands
 ---------------------
