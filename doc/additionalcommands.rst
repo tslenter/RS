@@ -377,7 +377,7 @@ Restore default refresh interval for index:
 
    curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_settings -d '{ "settings": { "refresh_interval": "1s" }}' | jq
 
-8.1.23 Example lifecycle policy
+8.1.24 Example lifecycle policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
