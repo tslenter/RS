@@ -337,6 +337,18 @@ View alias:
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_alias/* | jq
+   
+Example alias usage:
+
+.. code-block:: console
+
+   curl -XDELETE --header "Content-Type: application/json" http://localhost:9200/rsx-netflow*
+
+and:
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rsx-netflow-000001?pretty -d ' { "aliases": { "rsx-netflow":{ "is_write_index": true } } }'
 
 8.1.23 Refresh indexes
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -374,7 +386,7 @@ Restore default refresh interval for index:
  
  and:
  
- .. code-block:: console
+.. code-block:: console
  
    curl -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }'
 
