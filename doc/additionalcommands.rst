@@ -384,7 +384,7 @@ Restore default refresh interval for index:
 
    curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_ilm/policy/netflow-policy -d ' { "policy": { "phases": { "hot": { "min_age": "0ms", "actions": { "rollover": { "max_primary_shard_size": "50gb", "max_age": "14d" } } }, "delete": { "min_age": "14d", "actions": { "delete": { "delete_searchable_snapshot": true } } } } } }' | jq
  
- and:
+and:
  
 .. code-block:: console
  
