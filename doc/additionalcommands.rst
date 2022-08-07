@@ -210,6 +210,21 @@ Command to filter a single value within 1 field:
 .. code-block:: console
    
    curl -XGET 'localhost:9200/_all/_search?q=HOST_FROM:172.16.30.1&pretty'
+
+8.1.18 Combined searches
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command to exclude a value and filter down a host within a specific time range:
+
+.. code-block:: console
+   
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not" : [ { "match" : { "PROGRAM" : "dhcpd" } } ], "filter" : [ { "term": { "HOST_FROM" : "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00", "lte": "2022-08-06T10:20:00.000+00:00" } } } ] } } , "size": 300 }' | jq
+   
+Command to exclude a value and filter down multiple hosts within a specific time range:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not" : [ { "match" : { "PROGRAM" : "dhcpd" } } ], "filter" : [ { "terms": { "HOST_FROM" : [ "172.16.30.1", "172.16.30.24" ] } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00", "lte": "2022-08-06T10:20:00.000+00:00" } } } ] } } , "size": 300 }' | jq
   
 8.2 RSC Core commands
 ---------------------
