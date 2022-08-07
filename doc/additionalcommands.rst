@@ -51,8 +51,8 @@ Command to set it to 1 minute:
       }
    }'
 
-8.1.3 Set lifecycly policy to default 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.1.3 Set lifecycly policy speed to default 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Command to reset the policy:
 
@@ -364,6 +364,19 @@ Restore default refresh interval for index:
 .. code-block:: console
 
    curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/rse-dummy/_settings -d '{ "settings": { "refresh_interval": "1s" }}' | jq
+
+8.1.23 Example lifecycle policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XPUT --header 'Content-Type: application/json' http://localhost:9200/_ilm/policy/netflow-policy -d ' { "policy": { "phases": { "hot": { "min_age": "0ms", "actions": { "rollover": { "max_primary_shard_size": "50gb", "max_age": "14d" } } }, "delete": { "min_age": "14d", "actions": { "delete": { "delete_searchable_snapshot": true } } } } } }'
+ 
+ and:
+ 
+ .. code-block:: console
+ 
+   curl -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }'
 
 8.2 RSC Core commands
 ---------------------
