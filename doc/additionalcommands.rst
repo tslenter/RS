@@ -212,13 +212,27 @@ Command to filter a single value within 1 field:
    curl -XGET 'localhost:9200/_all/_search?q=HOST_FROM:172.16.30.1&pretty'
 
 8.1.18 Example searches
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Create search query for message field:
 
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "match" : { "MESSAGE": "172.16.30.1" } } }' | jq
+
+or
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": { "match": { "MESSAGE": "172.16.30.1" } } } } }' | jq
+   
+Exclude result based on a single word:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not": { "match": { "MESSAGE": "172.16.30.1" } } } } }' | jq
+   
+
 
 8.1.19 Advanced searches
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -228,6 +242,12 @@ Command to exclude a value and filter down a host within a specific time range:
 .. code-block:: console
    
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not" : [ { "match" : { "PROGRAM" : "dhcpd" } } ], "filter" : [ { "term": { "HOST_FROM" : "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00", "lte": "2022-08-06T10:20:00.000+00:00" } } } ] } } , "size": 300 }' | jq
+   
+or:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gt": "2022-08-06T10:13:00.000+00:00", "lt": "2022-08-06T10:20:00.000+00:00||+1M" } } } ] } } }' | jq
    
 Command to exclude a value and filter down multiple hosts within a specific time range:
 
@@ -242,6 +262,20 @@ Note: Both the fields must match the value.
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "multi_match" : { "query": "172.16.30.1", "fields": [ "MESSAGE", "HOST_FROM" ] } } }' | jq
+   
+Search results after data and time with a value:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00" } } } ] } } }' | jq
+   
+Search results of the last hour with a value:
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "now-1h" } } } ] } } }' | jq
+   
+
   
 8.2 RSC Core commands
 ---------------------
