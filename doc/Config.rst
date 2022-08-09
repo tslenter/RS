@@ -45,6 +45,7 @@
    Logstash additional configs:   /etc/logstash/conf.d/99*
    
 9.2 Config checks
+-----------------
 
 9.2.1 Logstash test new config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
