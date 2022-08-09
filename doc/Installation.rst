@@ -302,7 +302,7 @@ To change the user use the reseview tool within the docker container. (CLI)
 
 Example is given for Remote Syslog RSE.
 
-2.9.1 Create docker image
+2.9.1 Prepare docker image
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download the ubuntu image from the registered images.
@@ -327,7 +327,7 @@ Change the following file:
    
    xpack.ml.enabled: false
    
-2.9.1 Create docker image
+2.9.2 Create docker image
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example code to create a docker image:
