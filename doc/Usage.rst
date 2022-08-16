@@ -174,7 +174,7 @@ The default login is nothing. When changed, the login username is probably "elas
 3.1.14 Filter on date and string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To filter ron date and a string use the following example:
+To filter a date and a string use the following example:
 
 .. code-block:: console
 
