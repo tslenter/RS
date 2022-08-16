@@ -255,11 +255,17 @@ Command to exclude a value and filter down a host within a specific time range:
    
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must_not" : [ { "match" : { "PROGRAM" : "dhcpd" } } ], "filter" : [ { "term": { "HOST_FROM" : "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00", "lte": "2022-08-06T10:20:00.000+00:00" } } } ] } } , "size": 300 }' | jq
    
-or:
+Command to filter down a value within a specific time range using OR:
 
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gt": "2022-08-06T10:13:00.000+00:00", "lt": "2022-08-06T10:20:00.000+00:00||+1M" } } } ] } } }' | jq
+   
+Command to filter down a value within a specific time range using AND (This query uses authentication):
+
+.. code-block:: console
+   
+   curl -XGET --header 'Content-Type: application/json' http://elastic:elastic@localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "MESSAGE": "marcel" } }, { "range": { "ISODATE": { "gt": "2022-08-12T06:50:14+00:00", "lt": "2022-08-12T06:52:14+00:00" } } } ] } } , "size": 300 }' | jq -r -c '.hits.hits[]._source.MESSAGE'
    
 Command to exclude a value and filter down multiple hosts within a specific time range:
 
@@ -275,11 +281,17 @@ Note: Both the fields must match the value.
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "multi_match" : { "query": "172.16.30.1", "fields": [ "MESSAGE", "HOST_FROM" ] } } }' | jq
    
-Search results after data and time with a value:
+Search results after data and time with a value using OR:
 
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "2022-08-06T10:13:00.000+00:00" } } } ] } } }' | jq
+
+Search results after data and time with a value using AND:
+
+.. code-block:: console
+   
+   curl -XGET --header 'Content-Type: application/json' http://elastic:elastic@localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "MESSAGE": "marcel" } }, { "match": { "MESSAGE": "VPN" } }, { "range": { "ISODATE": { "gt": "2022-08-12T06:50:14+00:00", "lt": "2022-08-12T06:52:14+00:00" } } } ] } } , "size": 300 }' | jq -r -c '.hits.hits[]._source.MESSAGE'
    
 Search results of the last hour with a value:
 
