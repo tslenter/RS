@@ -171,6 +171,17 @@ File 2: /opt/RSEVIEW/rs_init.php
 
 The default login is nothing. When changed, the login username is probably "elastic"
 
+3.1.14 Filter on date and string
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To filter ron date and a string use the following example:
+
+.. code-block:: console
+
+   To filter the date we use the R_ISODATE field.
+
+   rseview -s "R_ISODATE:2022-08-15T13\\:56 AND myswitch" 400
+
 3.2 RSC viewer (rsview)
 -----------------------
 
