@@ -401,6 +401,15 @@ and:
 .. code-block:: console
  
    curl -XPUT --header 'Content-Type: application/json' http://127.0.0.1:9200/_template/netflow-temp -d ' { "template":"rsx-netflow*", "settings": { "number_of_replicas": 1, "number_of_shards": 1, "index.lifecycle.name": "netflow-policy", "index.lifecycle.rollover_alias": "rsx-netflow" } }' | jq
+   
+8.1.25 Dump latest 10000 results sorted to the CLI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following is a example commando with authentication. If needed, replace the index and authentication values.
+
+.. code-block:: console
+
+   curl -XGET --header 'Content-Type: application/json' http://elastic:elastic@localhost:9200/rse*/_search -d '{ "size": 10000, "sort": { "R_ISODATE": "desc"} }' |  jq -r -c '.hits.hits[]._source | "\(.DATE) \(.MESSAGE)"' | tac
 
 8.2 RSC Core commands
 ---------------------
