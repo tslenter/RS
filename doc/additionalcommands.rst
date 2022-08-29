@@ -414,6 +414,13 @@ The following is a example commando with authentication. If needed, replace the 
 8.1.26 How to resolve a full disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Error recieved in Kibana:
+
+.. code-block:: console
+
+   {"type":"log","@timestamp":"2022-08-29T15:55:49+02:00","tags":["info","savedobjects-service"],"pid":8508,"message":"[.kibana_task_manager] REINDEX_SOURCE_TO_TEMP_TRANSFORM -> REINDEX_SOURCE_TO_TEMP_INDEX_BULK. took: 64ms."}
+   {"type":"log","@timestamp":"2022-08-29T15:55:49+02:00","tags":["info","savedobjects-service"],"pid":8508,"message":"[.kibana] REINDEX_SOURCE_TO_TEMP_TRANSFORM -> REINDEX_SOURCE_TO_TEMP_INDEX_BULK. took: 124ms."}
+
 Run:
 
 .. code-block:: console
