@@ -410,6 +410,48 @@ The following is a example commando with authentication. If needed, replace the 
 .. code-block:: console
 
    curl -XGET --header 'Content-Type: application/json' http://elastic:elastic@localhost:9200/rse*/_search -d '{ "size": 10000, "sort": { "R_ISODATE": "desc"} }' |  jq -r -c '.hits.hits[]._source | "\(.DATE) \(.MESSAGE)"' | tac
+   
+8.1.26 How to resolve a full disk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run:
+
+.. code-block:: console
+
+   curl -XGET -H "Content-Type: application/json" http://elastic:elastic@localhost:9200/_cluster/allocation/explain?pretty
+
+Given warning:
+
+.. code-block:: console
+
+   "explanation" : "the node is above the low watermark cluster setting [cluster.routing.allocation.disk.watermark.low=85%], using more disk space than the maximum allowed [85.0%], actual free: [13.201362304896152%]"
+
+Temporary increase the allowed diskspace:
+
+.. code-block:: console
+
+   curl -XPUT -H "Content-Type: application/json" http://elastic:elastic@localhost:9200/_cluster/settings -d '
+   {
+     "transient": {
+       "cluster.routing.allocation.disk.watermark.low": "90%",
+       "cluster.routing.allocation.disk.watermark.high": "92%",
+       "cluster.routing.allocation.disk.watermark.flood_stage": "95%"
+     }
+   }' | jq
+
+
+Login and remove some shards to lower the diskspace then restore the allowed diskspace:
+
+.. code-block:: console
+
+   curl -XPUT -H "Content-Type: application/json" http://elastic:elastic@localhost:9200/_cluster/settings -d '
+   {
+     "transient": {
+       "cluster.routing.allocation.disk.watermark.low": "85%",
+       "cluster.routing.allocation.disk.watermark.high": "90%",
+       "cluster.routing.allocation.disk.watermark.flood_stage": "95%"
+     }
+   }' | jq
 
 8.2 RSC Core commands
 ---------------------
