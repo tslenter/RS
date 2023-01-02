@@ -96,6 +96,8 @@ Edit configuration:
    ldap_id_mapping = True
    use_fully_qualified_names = True
    fallback_homedir = /home/%u@%d
+   #Disable nested serches (Speeds up searches)
+   #ignore_group_members = True
    #Restict AD search:
    #ldap_search_base = DC=lan,DC=local
    #ldap_user_search_base OU=Power Users,OU=Accounts,DC=lan,DC=local
