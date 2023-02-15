@@ -556,3 +556,55 @@ All options for ssh_connect.py:
      -p PASSWORD, --password PASSWORD        Add a password
      -s SINGLECOMMAND, --singlecommand       SINGLECOMMAND	Enter a single command
      -f FILE, --file FILE                    Add file with commands
+     
+3.7 RSEDUMPER
+-------------
+
+RSEDUMPER is a small tool that can dump the default RSE index with color style.
+
+3.7.1 Installation
+^^^^^^^^^^^^^^^^^^
+
+Copy to repo to the local machine:
+
+.. code-block:: console
+
+   git clone https://www.github.com/tslenter/RSEDUMPER
+   cd RSEDUMPER
+   cp rsedumper /usr/bin/
+
+3.7.2 Usage
+^^^^^^^^^^^
+
+Run as single cli command with multiple remote commands do:
+
+.. code-block:: console
+
+   ubuntu@rssyslog001:~$rsedumper
+
+   ##################################################
+   #Remote Syslog Elasticsearch Dumper              #
+   #More information: https://www.remotesyslog.com  #
+   #Remote Syslog dumper for Elasticsearch          #
+   #Version: RSEDUMPER 0.1                          #
+   #URL: https://github.com/tslenter/RSEDUMPER      #
+   #Donation: https://github.com/tslenter/RS        #
+   ##################################################
+
+   Usage rseview:
+
+   -h,--help               Display help
+   -c,--color              Dump default RSE index in color
+   -n,--nocolor            Dump default RSE index without color
+   
+Start the dump with:
+
+.. code-block:: console
+
+   without color:
+
+   rsedumper -n
+   
+   or with color:
+   
+   rsedumper -c
