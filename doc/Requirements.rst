@@ -11,6 +11,9 @@ All version supported.
 .. code-block:: console
 
    Ubuntu 20.04 LTS
+   Ubuntu 22.04 LTS
+   Debian 10.x
+   Debian 12.x
 
 1.2 Tested hardware:
 --------------------
