@@ -15,7 +15,7 @@ All version supported.
    Debian 10.x
    Debian 12.x
 
-1.2 Tested hardware:
+1.2 Tested hardware
 --------------------
 
 Only for RSE or RSC.
