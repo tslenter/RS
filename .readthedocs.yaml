@@ -8,3 +8,5 @@ formats: all
 # Set OS
 build:
   os: ubuntu-22.04
+  tools:
+    python: "3.10"
