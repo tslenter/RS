@@ -435,3 +435,46 @@ Edit:
 .. code-block:: console
 
    0 * * * * /opt/mailrs
+
+This will run the script every hour.
+
+7.6 Generate an email from an event using python (Only RSE)
+----------------------------------------------
+
+Required core = RSE core
+
+Clone git:
+
+.. code-block:: console
+
+   git clone https://github.com/tslenter/RSMAILEVENT
+
+Edit:
+
+.. code-block:: console
+
+   ./RSMAILEVENT/message.py
+
+Chnage the variable to match the environment. 
+
+Make file executable and copy to the opt directory:
+
+.. code-block:: console
+
+   chmod +x ./RSMAILEVENT/message.py
+   cp ./RSMAILEVENT/message.py /opt/message.py
+
+Install with cron:
+Command:
+
+.. code-block:: console
+
+   crontab -e
+
+Edit:
+
+.. code-block:: console
+
+   0 * * * * /opt/message.py
+
+This will run the script every hour.
