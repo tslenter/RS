@@ -455,7 +455,7 @@ Edit:
 
    ./RSMAILEVENT/message.py
 
-Chnage the variable to match the environment. 
+Change the variable to match the environment. 
 
 Make file executable and copy to the opt directory:
 
