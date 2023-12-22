@@ -423,8 +423,7 @@ Make file executable:
    chmod +x /opt/mailrs
 
 
-Install with cron:
-Command:
+Install with cron, run command:
 
 .. code-block:: console
 
@@ -464,8 +463,7 @@ Make file executable and copy to the opt directory:
    chmod +x ./RSMAILEVENT/message.py
    cp ./RSMAILEVENT/message.py /opt/message.py
 
-Install with cron:
-Command:
+Install with cron, run command:
 
 .. code-block:: console
 
