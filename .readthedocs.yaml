@@ -4,9 +4,3 @@
 # Required
 version: 2
 formats: all
-
-# Set OS
-build:
-  os: ubuntu-22.04
-  tools:
-    nodejs: "18"
