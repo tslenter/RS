@@ -372,7 +372,7 @@ Create array:
 
    #!/bin/bash
    #Array of words:
-   declare -a data=(module)
+   declare -a data=("test")
 
 Check if error messages exist:
 
