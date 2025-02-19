@@ -299,11 +299,11 @@ Search results of the last hour with a value:
 
    curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "should": [ { "match": { "MESSAGE": "172.16.30.1" } }, { "range": { "R_ISODATE": { "gte": "now-1h" } } } ] } } }' | jq
 
-Search results of the last 10 minutes and filter the time in ascending mode:
+Search results with a search word "test" using the last 10 minutes and filter the time in ascending mode:
 
 .. code-block:: console
 
-   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "MESSAGE": "forward" } }, { "range": { "R_ISODATE": { "gte": "now-10m", "lte": "now" } } } ] } }, "sort": [ { "R_ISODATE": { "order": "asc" } } ] }' | jq
+   curl -XGET --header 'Content-Type: application/json' http://localhost:9200/rse*/_search -d '{ "query" : { "bool" : { "must": [ { "match": { "MESSAGE": "test" } }, { "range": { "R_ISODATE": { "gte": "now-10m", "lte": "now" } } } ] } }, "sort": [ { "R_ISODATE": { "order": "asc" } } ] }' | jq
    
 8.1.20 Validate query's
 ^^^^^^^^^^^^^^^^^^^^^^^
